@@ -1,26 +1,39 @@
-
-**Task 1**
+Overall Design Choices
 ------------------------------------------------------
-Overall Design Choices:
 
-**Task 2**
+
+Task 1
 ------------------------------------------------------
-Overall Design Choices:
+Start:
+Intermediate:
+End:
 
-**Task 3**
+Task 2
 ------------------------------------------------------
-Overall Design Choices:
+Start:
+Intermediate:
+End:
 
-All three screenshots can be found using the task3.html and style.css. However, for the end state, you will need to uncomment a line in the CSS file.
-
-**Task 4**
+Task 3
 ------------------------------------------------------
-Overall Design Choices:
+Start:
+Intermediate:
+End:
 
-**Task 5**
+Task 4
 ------------------------------------------------------
-Overall Design Choices:
+Start:
+Intermediate:
+End:
 
-**Task 6**
+Task 5
 ------------------------------------------------------
-Overall Design Choices:
+Start:
+Intermediate:
+End:
+
+Task 6
+------------------------------------------------------
+Start:
+Intermediate:
+End:
