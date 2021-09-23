@@ -63,6 +63,7 @@
 
 #checkcheck3 {
     flex-grow: 15;
+    /*uncomment next line for checked (or completed) tasks*/
     /*text-decoration: line-through;*/
 }
 
