@@ -32,6 +32,10 @@
     background: lightcoral;
 }
 
+#incomplete:hover {
+    background-color: yellow;
+}
+
 .line {
     grid-row: 2/ span 1;
     grid-column: 1/ span 2;
@@ -78,6 +82,14 @@
     flex-grow: 1;
 }
 
+#edited {
+    width: 400px;
+}
+
+#edit3:hover {
+    background-color: yellow;
+}
+
 .delete {
     flex-grow: 1;
 }
@@ -85,6 +97,10 @@
 #deleteComp {
     grid-row: 3/ span 1;
     grid-column: 1/ span 4;
+}
+
+#deleteComp:hover {
+    background-color: yellow;
 }
 
 #deleteAll{
