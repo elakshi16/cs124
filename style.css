@@ -20,16 +20,16 @@
 #all {
     grid-row: 1/ span 1;
     grid-column: 1/span 1;
-    /*background: lightblue;*/
-    background: lightcoral;
+    background: lightblue;
+    /*background: lightcoral;*/
 }
 
 #incomplete {
     grid-row: 1/ span 1;
     grid-column: 2/ span 1;
     /*use lightblue for tab you are on, lightcoral for other tab*/
-    background: lightblue;
-    /*background: lightcoral;*/
+    /*background: lightblue;*/
+    background: lightcoral;
 }
 
 .line {
