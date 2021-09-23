@@ -7,10 +7,14 @@
     width: 400px;
 }
 
+#addtask:hover{
+    background-color: yellow;
+}
+
 #checklist {
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 #all {
@@ -33,15 +37,44 @@
     font-size: larger;
 }
 
+.line2 {
+    grid-row: 3/ span 1;
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+.line3 {
+    grid-row: 4/ span 1;
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
 #checkcheck {
     flex-grow: 15;
 }
 
-#edit {
+#checkcheck2 {
+    flex-grow: 15;
+}
+
+#checkcheck3 {
+    flex-grow: 15;
+    /*text-decoration: line-through;*/
+}
+
+#checkcheck3:hover {
+    background-color: lightgray;
+}
+
+.edit {
     flex-grow: 1;
 }
 
-#delete {
+.delete {
     flex-grow: 1;
 }
 
