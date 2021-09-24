@@ -17,7 +17,8 @@ wish to delete all completed tasks, then they could simply navigate back to the 
 <br>
 **Alternative Designs** <br>
 Some alternative designs we considered were different labels of components and different designs of buttons. We ended
-up going with our final design due to other hurdles we encountered while building this checklist. 
+up going with our final design due to other hurdles we encountered while building this checklist. We also considered only 
+adding the "Delete Completed" button to the "ALL" tab, but we decided against this due to the reasons discussed above.
 
 **User Testing** <br>
 We did not do any outright user testing, but we did consider our own relationship with this checklist and what we might 
