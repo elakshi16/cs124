@@ -1,27 +1,43 @@
 Overall Design Choices
 ------------------------------------------------------
+**Our Design Decisions** <br>
 We decided to place the area where the user could create a new task at the top of the page so that user would have
-readily available access to the most basic function of a checklist - putting items on teh checklist. Next we placed two
+readily available access to the most basic function of a checklist - putting items on teh checklist. Also, we made sure to make 
+the textbox fairly large so that a reasonably long input would be displayed at once in the textbox. Next we placed two
 tabs labeled "ALL" and "INCOMPLETE" where the user could sort the items on their checklist. "ALL" is intended to display
 all checklist items whereas "INCOMPLETE" displays only incomplete checklist items. The next major design decision we
 made was to have an edit and delete button on every checklist item line. We felt these buttons were important as they 
 allowed the user to edit and delete specific line items. Lastly at the bottom we placed "Delete Completed" and "Delete 
 All" buttons. We chose these two buttons as we thought a user would either want to clean up their list by deleting the 
-completed items or start a completely new list in which case they would want to delete all.
-
+completed items or start a completely new list in which case they would want to delete all. We specifically made the decision
+to add the "Delete Completed" button to both tabs so that someone on the "INCOMPLETE" tab does not have to navigate back
+to the "ALL" tab if they are sure they want to get rid of any completed tasks. If the user wants to check that they truly
+wish to delete all completed tasks, then they could simply navigate back to the "ALL" tab to do so.
+<br>
+<br>
+**Alternative Designs** <br>
 Some alternative designs we considered were different labels of components and different designs of buttons. We ended
 up going with our final design due to other hurdles we encountered while building this checklist. 
 
+**User Testing** <br>
 We did not do any outright user testing, but we did consider our own relationship with this checklist and what we might 
 want out of the design.
 
-The flow of the app can be seen through completing the tasks below.
+**Final Design Images**<br>
+See below for screenshots of our webpage through different stages of each of the six tasks.
 
+**Challenges**<br>
 One specific challenge we faced is with flexbox and gridbox design. We intitially tried to create one gridbox that dealt
-with the outer table and the structuring on each line all in one gridbox. We were having trouble controlling grandchild
-elements and eventually came to the realization that gridbox/flexbox can only control direct children. We then changed 
-the structure to a gridbox where on every line that contained a checklist item was its own flexbox. By breaking up what 
-various parents had to do we were able to achieve the desired design.
+with the outer table (everything other than the create new task bar) and adding each new task as a row in the gridbox. We were having trouble controlling grandchild
+elements and eventually came to the realization that gridbox/flexbox can only control direct children (with the guidance of Prof. Rhodes). We then changed 
+the structure to a gridbox where every line that contained a checklist item was its own flexbox. By breaking up what 
+various parents had to do, we were able to achieve the desired design.
+<br>
+<br>
+**What We Are Most Proud Of**<br>
+One design choice that we are most proud of is giving the user a choice between an all tasks tab and an incomplete tasks 
+tab. While it may not seem as necessary when the list only contains three or four items, if the list builds up, it will
+be very convenient to see what still needs to be completed at the click of a button.
 
 Task 1
 ------------------------------------------------------
