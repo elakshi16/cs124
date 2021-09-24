@@ -1,6 +1,27 @@
 Overall Design Choices
 ------------------------------------------------------
+We decided to place the area where the user could create a new task at the top of the page so that user would have
+readily available access to the most basic function of a checklist - putting items on teh checklist. Next we placed two
+tabs labeled "ALL" and "INCOMPLETE" where the user could sort the items on their checklist. "ALL" is intended to display
+all checklist items whereas "INCOMPLETE" displays only incomplete checklist items. The next major design decision we
+made was to have an edit and delete button on every checklist item line. We felt these buttons were important as they 
+allowed the user to edit and delete specific line items. Lastly at the bottom we placed "Delete Completed" and "Delete 
+All" buttons. We chose these two buttons as we thought a user would either want to clean up their list by deleting the 
+completed items or start a completely new list in which case they would want to delete all.
 
+Some alternative designs we considered were different labels of components and different designs of buttons. We ended
+up going with our final design due to other hurdles we encountered while building this checklist. 
+
+We did not do any outright user testing, but we did consider our own relationship with this checklist and what we might 
+want out of the design.
+
+The flow of the app can be seen through completing the tasks below.
+
+One specific challenge we faced is with flexbox and gridbox design. We intitially tried to create one gridbox that dealt
+with the outer table and the structuring on each line all in one gridbox. We were having trouble controlling grandchild
+elements and eventually came to the realization that gridbox/flexbox can only control direct children. We then changed 
+the structure to a gridbox where on every line that contained a checklist item was its own flexbox. By breaking up what 
+various parents had to do we were able to achieve the desired design.
 
 Task 1
 ------------------------------------------------------
@@ -68,7 +89,8 @@ Intermediate:
 Requires task5,6_start_intermediate.html, style.css, clicking on the incomplete tab, and manual check of "Eat Lunch".
 ![](Screenshots/task5_intermediate.png)
 End:
-Requires task5,6_end.html, style.css, and the uncommenting of light blue as the background color for "incomplete", light coral for "all"
+Requires task5,6_end.html, style.css, and the uncommenting of light blue as the background color for "incomplete", 
+light coral for "all"
 ![](Screenshots/task5_end.png)
 
 Task 6
@@ -77,7 +99,8 @@ Start:
 Requires task5,6_start_intermediate.html, style.css, and manual clicking of the "Eat Lunch" task checkbox.
 ![](Screenshots/task6_start.png)
 Intermediate:
-Requires task5,6_start_intermediate.html, style.css, manual clicking of "Eat Lunch" checkbox, and clicking on the "Delete Completed" button.
+Requires task5,6_start_intermediate.html, style.css, manual clicking of "Eat Lunch" checkbox, and clicking on the 
+"Delete Completed" button.
 ![](Screenshots/task6_intermediate.png)
 End:
 Requires task 5,6_end.html and style.css
