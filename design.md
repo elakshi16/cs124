@@ -1,4 +1,4 @@
-Overall Design Choices
+Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
 We decided to place the area where the user could create a new task at the top of the page so that user would have
