@@ -1,0 +1,109 @@
+#createtask {
+    background: lightgray;
+    text-align: center;
+}
+
+#newtask {
+    width: 400px;
+}
+
+#addtask:hover{
+    background-color: yellow;
+}
+
+#checklist {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#all {
+    grid-row: 1/ span 1;
+    grid-column: 1/span 1;
+    background: lightblue;
+    /*background: lightcoral;*/
+}
+
+#incomplete {
+    grid-row: 1/ span 1;
+    grid-column: 2/ span 1;
+    /*use lightblue for tab you are on, lightcoral for other tab*/
+    /*background: lightblue;*/
+    background: lightcoral;
+}
+
+#incomplete:hover {
+    background-color: yellow;
+}
+
+.line {
+    grid-row: 2/ span 1;
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+.line2 {
+    grid-row: 3/ span 1;
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+.line3 {
+    grid-row: 4/ span 1;
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+}
+
+#checkcheck {
+    flex-grow: 15;
+}
+
+#checkcheck2 {
+    flex-grow: 15;
+}
+
+#checkcheck3 {
+    flex-grow: 15;
+    /*uncomment next line for checked (or completed) tasks*/
+    /*text-decoration: line-through;*/
+}
+
+#checkcheck3:hover {
+    background-color: lightgray;
+}
+
+.edit {
+    flex-grow: 1;
+}
+
+#edited {
+    width: 400px;
+}
+
+#edit3:hover {
+    background-color: yellow;
+}
+
+.delete {
+    flex-grow: 1;
+}
+
+#deleteComp {
+    grid-row: 3/ span 1;
+    grid-column: 1/ span 4;
+}
+
+#deleteComp:hover {
+    background-color: yellow;
+}
+
+#deleteAll{
+    grid-row: 4/ span 1;
+    grid-column: 1/span 4;
+}
