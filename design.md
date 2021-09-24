@@ -48,17 +48,37 @@ Requires task3_incompletetab_start_intermediate_end.html and style.css
 Task 4
 ------------------------------------------------------
 Start:
+Requires task4_start.html and style.css
+![](Screenshots/task4_start.png)
 Intermediate:
+Requires task4_start.html, style.css, and clicking on the edit button.
+![](Screenshots/task4_intermediate.png)
+Requires task4_intermediate.html, style.css, and the user typing in the renamed title.
+![](Screenshots/task4_intermediate_p2.png)
 End:
+Requires task4_end.html and style.css
+![](Screenshots/task4_end.png)
 
 Task 5
 ------------------------------------------------------
 Start:
+Requires task5,6_start_intermediate.html, style.css, along with a manual checking of the "Eat Lunch" task. 
+![](Screenshots/task5_start.png)
 Intermediate:
+Requires task5,6_start_intermediate.html, style.css, clicking on the incomplete tab, and manual check of "Eat Lunch".
+![](Screenshots/task5_intermediate.png)
 End:
+Requires task5,6_end.html, style.css, and the uncommenting of light blue as the background color for "incomplete", light coral for "all"
+![](Screenshots/task5_end.png)
 
 Task 6
 ------------------------------------------------------
 Start:
+Requires task5,6_start_intermediate.html, style.css, and manual clicking of the "Eat Lunch" task checkbox.
+![](Screenshots/task6_start.png)
 Intermediate:
+Requires task5,6_start_intermediate.html, style.css, manual clicking of "Eat Lunch" checkbox, and clicking on the "Delete Completed" button.
+![](Screenshots/task6_intermediate.png)
 End:
+Requires task 5,6_end.html and style.css
+![](Screenshots/task6_end.png)
