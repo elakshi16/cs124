@@ -13,7 +13,7 @@ const initialData = [
 function App() {
   const [data, setData] = useState(initialData);
   return (<div>
-      <AddTask onAddTask={(text) => setData(data.append(text))}/>
+      <AddTask onAddTask={(text, id) => setData(data.concat([{title: text, id: id}]))}/>
         <Tasks list={data}/>
     </div>
   );

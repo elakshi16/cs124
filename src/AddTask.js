@@ -1,11 +1,16 @@
 import React, {useState} from "react";
 
+function generateId(currentId) {
+    return currentId ++;
+}
+
 function AddTask(props) {
     const [text, setText] = useState(null);
+    const [id, setId] = useState(0);
     return <div>
         <form>
-            <input type="text" value = {text}/>
-            <input type="submit" onClick={e => props.onAddTask({title: {text}, id:"123"})}/>
+            <input type="text" id ={id} value={text} placeholder="Enter new task here"/>
+            <input type="submit" value = "+" onClick={e => props.onAddTask(({text},{id}))}/>
         </form>
     </div>
 }
