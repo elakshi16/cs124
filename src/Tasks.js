@@ -3,7 +3,7 @@ import React from 'react';
 
 function Tasks(props) {
     return <div>
-        {props.list.map(elem => <Task taskText={elem.title}/>)}
+        {props.list.map(elem => <Task key={elem.id} taskText={elem.title}/>)}
     </div>
 }
 
