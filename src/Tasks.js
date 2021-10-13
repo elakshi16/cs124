@@ -1,10 +1,11 @@
 import Task from'./Task';
-import React from 'react';
+import React, {useState} from "react";
 
 function Tasks(props) {
-    return <div>
-        {props.list.map(elem => <Task key={elem.id} taskText={elem.title}/>)}
-    </div>
+    const [completedId, setCompletedId] = useState([]);
+    return (<div>
+        {props.list.map(elem => <Task onRowClick={(id) => setCompletedId(completedId.append(id))} completed={elem.id in completedId} key={elem.id} taskText={elem.title} {...elem}/>)}
+    </div>);
 }
 
 export default Tasks;

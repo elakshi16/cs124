@@ -10,7 +10,7 @@ function AddTask(props) {
     return <div>
         <form>
             <input type="text" id ={id} value={text} placeholder="Enter new task here"/>
-            <input type="submit" value = "+" onClick={e => props.onAddTask(({text},{id}))}/>
+            <input type="submit" value = "+" onClick={e => props.onAddTask(text)}/>
         </form>
     </div>
 }
