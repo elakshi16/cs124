@@ -15,7 +15,7 @@ function App() {
   return (<div>
       <AddTask onAddTask={(text, id) => setData(data.concat([{title: text, id: id}]))}/>
         <Tasks list={data}/>
-        {/*<button>Show Uncomplete Tasks</button>*/}
+        <button>Show Incomplete Tasks</button>
         {/*<button onClick={setData([])}>Delete All</button>*/}
     </div>
   );
