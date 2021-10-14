@@ -9,10 +9,8 @@ function AddTask(props) {
     const [text, setText] = useState("");
     console.log("in addTask");
     return <div>
-        <form>
-            <input type="text" id ={generateUniqueID()} value={text} placeholder="Enter new task here"/>
-            <input type="submit" value = "+" onClick={e => props.onAddTask(text)}/>
-        </form>
+            <input type="text" id ={generateUniqueID()} value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter new task here"/>
+            <button onClick={e => props.onAddTask(text)}> + </button>
     </div>
 }
 
