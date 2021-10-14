@@ -21,7 +21,7 @@ function App() {
   const [data, setData] = useState(initialData);
   console.log("in app");
 
-  return (<div>
+  return (<div className={'App'}>
         <h1>Checklist App</h1>
         <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
         <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>

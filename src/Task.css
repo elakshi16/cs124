@@ -6,8 +6,8 @@
     background-color: aliceblue;
 }
 
-.props.completed {
-    /*background: pink;*/
+#task {
+    width: 275px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,10 +15,12 @@
 
 .check {
     order: 1;
+    font-size: 30px;
+
 }
 
-p {
+.writing {
     order: 2;
-    font-size: 30px;
+    font-size: 20px;
     font-family: "Times New Roman", serif;
 }
