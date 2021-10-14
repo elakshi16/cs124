@@ -1,5 +1,6 @@
 import Task from'./Task';
 import React, {useState} from "react";
+import './Tasks.css';
 
 function Tasks(props) {
     const [completedId, setCompletedId] = useState([]);
@@ -20,9 +21,9 @@ function Tasks(props) {
     }
 
     return (<div>
-        {props.list.map(elem => <div>
-                                    <Task toggleComplete={switchComplete(elem.id)}
-                                      completed={completedId.includes(elem.id)}
+        {props.list.map(elem => <div  className={'perTask'}>
+                                    <Task //toggleComplete={switchComplete(elem.id)}
+                                        completed={completedId.includes(elem.id)}
                                       key={elem.id}
                                       taskText={elem.title} {...elem}/>
                                     {/*<div className="editButton"><button onClick={e => toggleEdit()}>Edit</button></div>*/}

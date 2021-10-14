@@ -5,3 +5,20 @@
 .incomplete{
     background-color: aliceblue;
 }
+
+.taskLine {
+    /*background: pink;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.check {
+    /*order: 1;*/
+}
+
+p {
+    /*order: 2;*/
+    font-size: 30px;
+    font-family: "Times New Roman", serif;
+}

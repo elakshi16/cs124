@@ -1,0 +1,15 @@
+.perTasks {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: space-between;*/
+}
+
+Task {
+    order: 1;
+}
+
+.deleteButton {
+    order: 2;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+}
