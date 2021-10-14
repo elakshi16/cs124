@@ -13,6 +13,7 @@ const initialData = [
 
 function App() {
   const [data, setData] = useState(initialData);
+  console.log("in app");
   return (<div>
       <AddTask onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
         <Tasks list={data}/>
