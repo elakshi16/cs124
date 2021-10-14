@@ -16,7 +16,7 @@ function App() {
   console.log("in app");
   return (<div>
       <AddTask onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
-        <Tasks list={data}/>
+        <Tasks list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id != deletedId))}/>
         <button>Show Incomplete Tasks</button>
         {/*<button onClick={setData([])}>Delete All</button>*/}
     </div>
