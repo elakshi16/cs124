@@ -10,9 +10,18 @@ function Tasks(props) {
     //
     // }
 
+    function switchComplete(id){
+        if (completedId.includes(id)){
+            setCompletedId(completedId.remove(id))
+        }
+        else{
+            setCompletedId(completedId.push(id))
+        }
+    }
+
     return (<div>
         {props.list.map(elem => <div>
-                                    <Task onRowClick={(id) => setCompletedId(completedId.push(id))}
+                                    <Task toggleVisibility={switchComplete(elem.id)}
                                       completed={completedId.includes(elem.id)}
                                       key={elem.id}
                                       taskText={elem.title} {...elem}/>
