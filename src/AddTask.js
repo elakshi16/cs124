@@ -10,14 +10,14 @@ function AddTask(props) {
     const [text, setText] = useState("");
     console.log("in addTask");
 
-    function changeHandler(e){
-        setText(e.target.value)
-        // document.getElementById("taskTextField").value.reset()
+    function clickHandler(e, task){
+        props.onAddTask(task)
+        setText("")
     }
 
     return <div>
             <input id="taskTextField" type="text" id ={generateUniqueID()} value={text} onChange={e => setText(e.target.value)} placeholder="Enter new task here"/>
-            <button onClick={(e) => props.onAddTask(text)}> + </button>
+            <button onClick={(e) => clickHandler(e, text)}> + </button>
     </div>
 }
 

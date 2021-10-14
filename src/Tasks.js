@@ -11,7 +11,7 @@ function Tasks(props) {
                                       key={elem.id}
                                       taskText={elem.title} {...elem}/>
                                     <div className="editButton" ><button>Edit</button></div>
-                                    {/*<div className="deleteButton" onClick={props.onDeleteTask(elem.id)}><button>Delete</button></div>*/}
+                                    <div className="deleteButton"><button onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>
                                 </div>)}
     </div>);
 }
