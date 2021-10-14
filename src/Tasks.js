@@ -21,7 +21,7 @@ function Tasks(props) {
 
     return (<div>
         {props.list.map(elem => <div>
-                                    <Task toggleVisibility={switchComplete(elem.id)}
+                                    <Task toggleComplete={switchComplete(elem.id)}
                                       completed={completedId.includes(elem.id)}
                                       key={elem.id}
                                       taskText={elem.title} {...elem}/>
