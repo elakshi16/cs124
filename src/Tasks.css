@@ -1,11 +1,9 @@
-.perTasks {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: space-between;*/
+.Tasks {
+    border: 5px solid blue;
+    margin: 15px;
 }
-
-Task {
-    order: 1;
+.perTask {
+    display: flex;
 }
 
 .deleteButton {

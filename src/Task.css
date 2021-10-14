@@ -6,7 +6,7 @@
     background-color: aliceblue;
 }
 
-.taskLine {
+.props.completed {
     /*background: pink;*/
     display: flex;
     flex-direction: row;
@@ -14,11 +14,11 @@
 }
 
 .check {
-    /*order: 1;*/
+    order: 1;
 }
 
 p {
-    /*order: 2;*/
+    order: 2;
     font-size: 30px;
     font-family: "Times New Roman", serif;
 }

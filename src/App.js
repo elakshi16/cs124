@@ -6,7 +6,7 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const initialData = [
   {
-    title: "do dishes",
+    title: "do something",
     id: "123",
     completed: true
   },
@@ -22,9 +22,10 @@ function App() {
   console.log("in app");
 
   return (<div>
-      <AddTask onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
-        <Tasks list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
-        <button onClick={e => setData([])}>Delete All</button>
+        <h1>Checklist App</h1>
+        <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
+        <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
+        <button className={'deleteAll'} onClick={e => setData([])}>Delete All</button>
     </div>
   );
 }
