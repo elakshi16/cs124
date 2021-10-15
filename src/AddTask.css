@@ -2,3 +2,15 @@
     background: mediumpurple;
     text-align: center;
 }
+
+.taskTextField {
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+}
+
+.plus {
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+}

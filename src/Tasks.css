@@ -1,21 +1,8 @@
 .Tasks {
-    border: 3px solid lightblue;
+    border: 3px solid royalblue;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.fullTask {
-    display: flex;
-    margin: 5px;
-    background: aliceblue;
-}
-
-.deleteButton {
-    order: 2;
-    font-family: "Times New Roman", serif;
-    font-size: 13px;
-    text-align: center;
-    align-items: center;
-}
 
 

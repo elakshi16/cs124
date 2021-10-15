@@ -21,7 +21,7 @@ function Tasks(props) {
     }
 
     return (<div className={'Tasks'}>
-        {props.list.map(elem => <div  className={'fullTask'}>
+        {props.list.map(elem => <div>
                                     <Task //toggleComplete={switchComplete(elem.id)}
                                         className={'Task'}
                                         completed={completedId.includes(elem.id)}

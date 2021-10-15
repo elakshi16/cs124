@@ -3,24 +3,29 @@
 }
 
 .incomplete{
-    background-color: aliceblue;
+    background-color: powderblue;
 }
 
 #task {
-    width: 275px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 5px;
 }
 
 .check {
     order: 1;
     font-size: 30px;
-    align-items: center;
 }
 
 .writing {
     order: 2;
     font-size: 20px;
     font-family: "Times New Roman", serif;
+}
+
+.deleteButton {
+    order: 3;
+    font-family: "Times New Roman", serif;
+    font-size: 13px;
 }

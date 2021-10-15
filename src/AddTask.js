@@ -17,8 +17,8 @@ function AddTask(props) {
     }
 
     return <div className={'fullAdd'}>
-            <input id="taskTextField" type="text" id ={generateUniqueID()} value={text} onChange={e => setText(e.target.value)} placeholder="Enter new task here"/>
-            <button onClick={(e) => clickHandler(e, text)}> + </button>
+            <input className="taskTextField" type="text" id ={generateUniqueID()} value={text} onChange={e => setText(e.target.value)} placeholder="Enter new task here"/>
+            <button className={'plus'} onClick={(e) => clickHandler(e, text)}> + </button>
     </div>
 }
 
