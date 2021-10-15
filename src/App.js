@@ -20,6 +20,8 @@ const initialData = [
 function App() {
   const [data, setData] = useState(initialData);
   const [visibility, setVisibility] = useState(true);
+  console.log(data);
+  let filteredList = data.filter((task) => visibility || !task.completed);
   console.log("in app");
   //
   // function toggleVisibility(){
@@ -35,12 +37,24 @@ function App() {
   //     }
   // }
 
+    function handleTaskFieldChange(taskid,field,newVal){
+        if (field === "text"){
+            setData(data.map(elem => elem.id === taskid? elem.field = newVal: ""))
+        }
+        if (field === "completed"){
+            setData()
+        }
+    }
+// pass in all of data, but also pass in showCompleted (visibility) and tasks would filter things out
+    // or app does filterning and only passes the filtered list into tasks
   return (<div className={'App'}>
           <h1>Checklist App</h1>
           <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
-          <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
+        <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
           <div className={'endButtons'}>
               <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
+              //just have the value change instead of having a new button
+              //rename visibility to show completed
               {visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Hide Complete Tasks</button>}
               {!visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Show All Tasks</button>}
               {/*<div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>*/}
