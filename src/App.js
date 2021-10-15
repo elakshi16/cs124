@@ -39,9 +39,9 @@ function App() {
         <h1>Checklist App</h1>
         <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
         <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
-        <button className={'deleteAll'} onClick={e => setData([])}>Delete All</button>
-      {visibility && <button className="showIncomplete" onClick={e => setVisibility(!visibility)}> Hide Complete Tasks</button>}
-          {!visibility && <button className="showAll" onClick={e => setVisibility(!visibility)}> Show All Tasks</button>}
+        <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
+      {visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Hide Complete Tasks</button>}
+          {!visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Show All Tasks</button>}
           {/*<div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>*/}
 
       </div>
