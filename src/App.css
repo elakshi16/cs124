@@ -11,3 +11,7 @@ h1 {
   font-size: 20px;
   font-family: "Times New Roman", serif;
 }
+
+.endButtons {
+  text-align: center;
+}

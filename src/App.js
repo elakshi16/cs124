@@ -36,14 +36,15 @@ function App() {
   // }
 
   return (<div className={'App'}>
-        <h1>Checklist App</h1>
-        <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
-        <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
-        <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
-      {visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Hide Complete Tasks</button>}
-          {!visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Show All Tasks</button>}
-          {/*<div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>*/}
-
+          <h1>Checklist App</h1>
+          <AddTask className={'addTask'} onAddTask={(text) => setData(data.concat([{id: generateUniqueID(), title: text}]))}/>
+          <Tasks className={'Tasks'} list={data} onDeleteTask = {(deletedId) => setData(data.filter(task => task.id !== deletedId))}/>
+          <div className={'endButtons'}>
+              <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
+              {visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Hide Complete Tasks</button>}
+              {!visibility && <button className="largeButton" onClick={e => setVisibility(!visibility)}> Show All Tasks</button>}
+              {/*<div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>*/}
+          </div>
       </div>
   );
 }
