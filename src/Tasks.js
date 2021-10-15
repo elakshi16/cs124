@@ -25,11 +25,10 @@ function Tasks(props) {
                                     <Task //toggleComplete={switchComplete(elem.id)}
                                         className={'Task'}
                                         completed={completedId.includes(elem.id)}
-                                      key={elem.id}
+                                      elemid={elem.id}
+                                        onDeleteTask={props.onDeleteTask}
                                       taskText={elem.title} {...elem}/>
-                                    {/*<div className="editButton"><button onClick={e => toggleEdit()}>Edit</button></div>*/}
-                                    <div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(elem.id)}>Delete</button></div>
-                                </div>)}
+                                    {/*<div className="editButton"><button onClick={e => toggleEdit()}>Edit</button></div>*/}         </div>)}
         {completedId.length >1 && <button >Show Incomplete Tasks</button>}
     </div>);
 }

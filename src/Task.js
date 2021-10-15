@@ -8,6 +8,8 @@ function Task(props) {
             <input type="checkbox" className="check" onClick={props.toggleComplete }/>
             <p className={'writing'} contentEditable="true">{props.taskText}</p>
         </div>
+        <div className={'fullButton'}><button className={"deleteButton"} onClick={e => props.onDeleteTask(props.elemid)}>Delete</button></div>
+
     </div>
 }
 
