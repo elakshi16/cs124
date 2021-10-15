@@ -6,6 +6,8 @@
 
 .fullTask {
     display: flex;
+    margin: 5px;
+    background: aliceblue;
 }
 
 .deleteButton {
@@ -13,4 +15,7 @@
     font-family: "Times New Roman", serif;
     font-size: 13px;
     text-align: center;
+    align-items: center;
 }
+
+

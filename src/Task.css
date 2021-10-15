@@ -16,7 +16,7 @@
 .check {
     order: 1;
     font-size: 30px;
-
+    align-items: center;
 }
 
 .writing {
