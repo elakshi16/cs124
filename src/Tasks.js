@@ -3,11 +3,9 @@ import React, {useState} from "react";
 import './Tasks.css';
 
 function Tasks(props) {
-    console.log()
-
     return (<div className={'Tasks'}>
         {props.list.map(elem => <div>
-                                    <Task //toggleComplete={switchComplete(elem.id)}
+                                    <Task
                                         id = {elem.id}
                                         onTaskFieldChange={props.onTaskFieldChange}
                                         className='Task'

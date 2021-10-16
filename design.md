@@ -95,13 +95,21 @@ view of the App.
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-One challenge we had was with getting the button to display incomplete tasks only working. 
+One of our main challenges was in implementing the Hide Complete Tasks button. This was a two-step process because we needed
+to make sure the data was only being changed (to hide specific tasks) when the 'Hide Complete Tasks' button was pressed. In
+addition, we needed to keep track of completed (or checked) tasks. This was especially challenging because we had initially
+tried to change the completed field for tasks (which is immutable). After assistance from Prof. Rhodes, we were able to implement
+keeping track of completed status using 'setData'.
 
-Another challenge was getting the checkboxes working while simultaneously keeping track of the checked property.
+Another big challenge we had was in creating the AddTask component. Specifically, it was difficult to figure out adding a 
+new task into the data. While we knew that we would need to use 'setData', we had some trouble with getting the correct JavaScript
+syntax for adding an element to a list. With more time, we aim to figure out how to add an element to the 
+front of a list rather than the back. Then, the newly added tasks would be added to the top.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
 We are most proud of the fact that we were able to get our button toggling between showing all the tasks and showing 
-the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of different dependencies, 
-making it hard to troubleshoot. We were able to get it done though, and it works exactly how we expected it to work.
-
+the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of tracing properties through
+different components. Because there were so many property names to keep track of, it was important to stay consistent with
+what we called each property. Ultimately, we were able to use a 'handleTextFieldChange' function and a showCompleted state
+together in order to implement this function. In the end, we were able to get it working as we intended.

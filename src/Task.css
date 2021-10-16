@@ -1,11 +1,3 @@
-/*.completed{*/
-/*    visibility: hidden;*/
-/*}*/
-
-/*.incomplete{*/
-/*    background-color: powderblue;*/
-/*}*/
-
 #task {
     display: flex;
     flex-direction: row;

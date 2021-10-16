@@ -2,7 +2,6 @@ import React from 'react';
 import './Task.css';
 
 function Task(props) {
-    console.log("in Task");
 
     return <div key={props.id}>
         <div id="task">

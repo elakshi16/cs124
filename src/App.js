@@ -4,19 +4,8 @@ import React, {useState} from "react";
 import AddTask from "./AddTask";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
-const initialData = [
-  // {
-  //   title: "do something",
-  //   id: "123",
-  //   completed: true
-  // },
-  // {
-  //   title: "do dishes",
-  //   id: "124",
-  //   completed: false
-  // }
-]
- // some toggleCompleted (similar to handleFieldChanged in People)
+const initialData = []
+
 function App() {
   const [data, setData] = useState(initialData);
   const [showCompleted, setShowCompleted] = useState(true);
