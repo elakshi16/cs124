@@ -18,8 +18,8 @@ components to work. Thus, we used an editable field that allows the user to clic
 Several design elements were maintained from previous iterations. We kept creating a new task at the top of the
 page so that user could access the most essential item of teh checklist - putting items on the checklist. We maintained
 the delete button that allows users to get rid of checklist items once they are on the list. And lastly we kept the
-Delete All button at teh bottom
-
+Delete All button at the bottom of the app, because we found it worked well for its intended use.
+<br>
 <br>
 
 **Alternative Designs** <br>
@@ -30,12 +30,12 @@ Delete All button at teh bottom
 
 **User Testing** <br>
 The user testing went well, the user was able to accomplish all the tasks we set out for them. The one issue they had 
-was with finding 
+was with finding the checkbox. After looking at the App we realized we did not implement the color backgrounds for each 
+individual task. We then proceeded to implement this feature.
 
 Final Design Images
 ------------------------------------------------------
 
-See below for screenshots of our webpage through different stages of each of the six tasks.
 
 
 Reflection

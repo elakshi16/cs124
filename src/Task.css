@@ -1,16 +1,17 @@
-.completed{
-    visibility: hidden;
-}
+/*.completed{*/
+/*    visibility: hidden;*/
+/*}*/
 
-.incomplete{
-    background-color: powderblue;
-}
+/*.incomplete{*/
+/*    background-color: powderblue;*/
+/*}*/
 
 #task {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 5px;
+    background-color: powderblue;
 }
 
 .check {
@@ -22,6 +23,8 @@
     order: 2;
     font-size: 20px;
     font-family: "Times New Roman", serif;
+    background-color: aliceblue;
+    margin: 7px;
 }
 
 .deleteButton {
