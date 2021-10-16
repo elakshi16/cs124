@@ -81,6 +81,10 @@ If the user wishes to delete a specific task, they can simply press the delete b
 
 Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
 view of the App.
+
+![](docs/Lab2_screenshots/allChecked.png)
+
+![](docs/Lab2_screenshots/openApp.png)
 <br><br>
 
 Reflection
