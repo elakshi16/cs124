@@ -23,10 +23,15 @@ Delete All button at the bottom of the app, because we found it worked well for 
 <br>
 
 **Alternative Designs** <br>
+Alternative Designs that were thought about were mostly related to the idea of tabs versus buttons. Our original design 
+had tabs, and we had hoped to implement them, but due to a lack of time and comfortability with the implementation of 
+tabs we decided to replace the tabs with a button. 
 
-
-
-
+Another alternative designs suggested was putting a strike through a task once it was marked as complete. Ultimately we 
+decided against doing this due to the way our code was set up to access the checked component. It ended being a bit hard
+to access the property in the CSS, so we decided to go with the version that we had.
+<br>
+<br>
 
 **User Testing** <br>
 The user testing went well, the user was able to accomplish all the tasks we set out for them. The one issue they had 
