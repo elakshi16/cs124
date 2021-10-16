@@ -13,7 +13,6 @@ function Tasks(props) {
                                         className='Task'
                                         onDeleteTask={props.onDeleteTask}
                                       text={elem.title} {...elem}/>
-                                    {/*<div className="editButton"><button onClick={e => toggleEdit()}>Edit</button></div>*/}
                                 </div>)}
     </div>);
 }
