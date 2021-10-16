@@ -35,21 +35,64 @@ individual task. We then proceeded to implement this feature.
 
 Final Design Images
 ------------------------------------------------------
+This is the opening image of the app. The user can now proceed to insert a new task in the text box and press the '+'
+button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
+they will not do anything.
 
+![](docs/Lab2_screenshots/openApp.png)
 
+-----
+
+Once a user inserts a task the app will look like the following.
+
+![](docs/Lab2_screenshots/oneTask.png)
+
+----
+
+The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
+is what the app will look like if the user adds more tasks.
+
+![](docs/Lab2_screenshots/moreTasks.png)
+
+----
+
+Once tasks are complete the user can click on the checkbox and mark a task as complete.
+
+![](docs/Lab2_screenshots/someChecked.png)
+
+----
+
+At this point, if the user wants to make their checklist easier to read but don't want to delete their completed items 
+just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
+to the one below.
+
+![](docs/Lab2_screenshots/hideCompleted.png)
+
+----
+
+The user can then work with the checklist at this point or press the show all tasks button to return to the view shown 
+in the previous screenshot.
+
+If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
+
+![](docs/Lab2_screenshots/deleteTask.png)
+
+----
+
+Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
+view of the App.
+<br><br>
 
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-One specific challenge we faced is with flexbox and gridbox design. We intitially tried to create one gridbox that dealt
-with the outer table (everything other than the create new task bar) and adding each new task as a row in the gridbox. We were having trouble controlling grandchild
-elements and eventually came to the realization that gridbox/flexbox can only control direct children (with the guidance of Prof. Rhodes). We then changed
-the structure to a gridbox where every line that contained a checklist item was its own flexbox. By breaking up what
-various parents had to do, we were able to achieve the desired design.
+One challenge we had was with getting the button to display incomplete tasks only working. 
+
+Another challenge was getting the checkboxes working while simultaneously keeping track of the checked property.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-One design choice that we are most proud of is giving the user a choice between an all tasks tab and an incomplete tasks
-tab. While it may not seem as necessary when the list only contains three or four items, if the list builds up, it will
-be very convenient to see what still needs to be completed at the click of a button.
+We are most proud of the fact that we were able to get our button toggling between showing all the tasks and showing 
+the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of different dependencies, 
+making it hard to troubleshoot. We were able to get it done though, and it works exactly how we expected it to work.
 
