@@ -6,7 +6,7 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
 
-const initialData = []
+// const initialData = []
 
 const firebaseConfig = {
     apiKey: "AIzaSyCd9qqxvMpEKpBzwfWcc2tlRFa6ICaLH_s",
@@ -25,31 +25,43 @@ function App() {
     const query = collection;
     const [value, loading, error] = useCollection(collection);
 
+    const taskArray = [];
     if (value) {
-
+        for (let i=0; i<value.docs.length; i++) {
+            taskArray[i] = value.docs[i].data();
+        }
     }
 
-    const [data, setData] = useState(initialData);
+    // const [data, setData] = useState(initialData);
     const [showCompleted, setShowCompleted] = useState(true);
     let filteredList = data.filter((task) => showCompleted || !task.completed);
 
-    function handleAddTask(task) {
-        setData(data.concat([{id: generateUniqueID(), title: task}]));
+    function handleAddTask(taskName) {
+        // setData(data.concat([{id: generateUniqueID(), title: task}]));
+
+        const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
+        collection.doc(task.id).set(task);
     }
 
-    function handleTaskFieldChange(id, field, newVal) {
-        if (field === "title") {
-            setData(data.map(elem => elem.id === id ? {...elem, title: newVal} : elem));
+    function handleTaskFieldChange(taskId, field, newVal) {
+        // if (field === "title") {
+        //     setData(data.map(elem => elem.id === id ? {...elem, title: newVal} : elem));
+        //
+        // }
+        // if (field === "completed") {
+        //     setData(data.map(elem => elem.id === id ? {...elem, completed: newVal} : elem));
+        //
+        // }
 
-        }
-        if (field === "completed") {
-            setData(data.map(elem => elem.id === id ? {...elem, completed: newVal} : elem));
-
-        }
+        const updateTask = {id:taskId, [field]:newVal };
+        collection.doc(updateTask.id).update(updateTask);
     }
 
     function handleDeleteTask(deletedId) {
-        setData(data.filter(task => task.id !== deletedId));
+        // setData(data.filter(task => task.id !== deletedId));
+
+        const taskDelete = taskArray.filter(task => task.id !== deletedId);
+        collection.doc(deletedId).delete(taskDelete);
     }
 
 
@@ -62,6 +74,7 @@ function App() {
             <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange}
                    onDeleteTask={handleDeleteTask}/>
             <div className={'endButtons'}>
+                {/*follow directions for delete task but apply to all, don't filter anything out*/}
                 <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
                 <button className="largeButton"
                         onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
