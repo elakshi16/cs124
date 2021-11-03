@@ -64,6 +64,10 @@ function App() {
         collection.doc(deletedId).delete(taskDelete);
     }
 
+    function handleDeleteAll() {
+
+    }
+
 
     return (<div className={'App'}>
             {loading && <p>Page is loading</p>}
@@ -71,11 +75,11 @@ function App() {
             <h1>Checklist App</h1>
             <AddTask className={'addTask'}
                      onAddTask={handleAddTask}/>
-            <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange}
+            <Tasks className={'Tasks'} list={taskArray} onTaskFieldChange={handleTaskFieldChange}
                    onDeleteTask={handleDeleteTask}/>
             <div className={'endButtons'}>
                 {/*follow directions for delete task but apply to all, don't filter anything out*/}
-                <button className={'largeButton'} onClick={e => setData([])}>Delete All</button>
+                <button className={'largeButton'} onClick={e => handleDeleteAll()}>Delete All</button>
                 <button className="largeButton"
                         onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
             </div>
