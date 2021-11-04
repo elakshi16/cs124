@@ -8,6 +8,7 @@ function Tasks(props) {
         {props.list.map(elem => <div>
                                     <Task
                                         id = {elem.id}
+                                        priority={elem.priority}
                                         onTaskFieldChange={props.onTaskFieldChange}
                                         className='Task'
                                         onDeleteTask={props.onDeleteTask}

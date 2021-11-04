@@ -21,8 +21,16 @@
 
 #priority {
     order: 3;
-
 }
+
+.filled {
+    background-color: black;
+}
+
+.empty {
+    background-color: white;
+}
+
 
 .deleteButton {
     order: 4;
