@@ -26,7 +26,7 @@ function App() {
     const [value, loading, error] = useCollection(collection);
 
     const taskArray = [];
-    const showCompleted = true;
+    // const showCompleted = true;
     if (value) {
         for (let i=0; i<value.docs.length; i++) {
             taskArray[i] = value.docs[i].data();
@@ -34,8 +34,8 @@ function App() {
     }
 
     // const [data, setData] = useState(initialData);
-    // const [showCompleted, setShowCompleted] = useState(true);
-    // let filteredList = data.filter((task) => showCompleted || !task.completed);
+    const [showCompleted, setShowCompleted] = useState(true);
+    const filteredList = taskArray.filter((task) => showCompleted || !task.completed);
 
     function handleAddTask(taskName) {
         // setData(data.concat([{id: generateUniqueID(), title: task}]));
@@ -54,25 +54,19 @@ function App() {
         //
         // }
 
-        const updateTask = {id:taskId, [field]:newVal };
-        collection.doc(updateTask.id).update(updateTask);
+        const updateTask = {[field]:newVal };
+        console.log(field, newVal);
+        collection.doc(taskId).update(updateTask);
     }
 
-    function handleDeleteTask(deletedId) {
+    function handleDeleteTasks(deletedIds) {
         // setData(data.filter(task => task.id !== deletedId));
-
-        const taskDelete = taskArray.filter(task => task.id !== deletedId);
-        collection.doc(deletedId).delete(taskDelete);
+        for (let i=0; i < filteredList.length; i++){
+            collection.doc(deletedIds[i]).delete();
+        }
     }
 
-    function handleDeleteAll() {
-        const taskDelete = taskArray.filter(task => task);
-        collection.doc().delete(taskDelete);
-    }
 
-    function handleHideButtonClick() {
-        collection.doc().update();
-    }
 
 
     return (<div className={'App'}>
@@ -81,13 +75,13 @@ function App() {
             <h1>Checklist App</h1>
             <AddTask className={'addTask'}
                      onAddTask={handleAddTask}/>
-            <Tasks className={'Tasks'} list={taskArray} onTaskFieldChange={handleTaskFieldChange}
-                   onDeleteTask={handleDeleteTask}/>
+            <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange}
+                   onDeleteTask={handleDeleteTasks}/>
             <div className={'endButtons'}>
                 {/*follow directions for delete task but apply to all, don't filter anything out*/}
-                <button className={'largeButton'} onClick={e => handleDeleteAll}>Delete All</button>
+                <button className={'largeButton'} onClick={e => handleDeleteTasks(filteredList.map((task) => task.id))}>Delete All</button>
                 <button className="largeButton"
-                        onClick={e => handleHideButtonClick}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
+                        onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
             </div>
         </div>
     );
