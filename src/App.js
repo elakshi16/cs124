@@ -1,4 +1,5 @@
 import './App.css';
+import Sorting from "./Sorting";
 import Tasks from "./Tasks";
 import React, {useState} from "react";
 import AddTask from "./AddTask";
@@ -41,7 +42,7 @@ function App() {
         // setData(data.concat([{id: generateUniqueID(), title: task}]));
 
         const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
-        collection.doc(task.id).set(task);
+        query.doc(task.id).set(task);
     }
 
     function handleTaskFieldChange(taskId, field, newVal) {
@@ -56,16 +57,19 @@ function App() {
 
         const updateTask = {[field]:newVal };
         console.log(field, newVal);
-        collection.doc(taskId).update(updateTask);
+        query.doc(taskId).update(updateTask);
     }
 
     function handleDeleteTasks(deletedIds) {
         // setData(data.filter(task => task.id !== deletedId));
         for (let i=0; i < filteredList.length; i++){
-            collection.doc(deletedIds[i]).delete();
+            query.doc(deletedIds[i]).delete();
         }
     }
 
+    function sortBy(field) {
+
+    }
 
 
 
@@ -75,6 +79,7 @@ function App() {
             <h1>Checklist App</h1>
             <AddTask className={'addTask'}
                      onAddTask={handleAddTask}/>
+            <Sorting classname={"sort"} onSelection={sortBy}/>
             <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange}
                    onDeleteTask={handleDeleteTasks}/>
             <div className={'endButtons'}>
