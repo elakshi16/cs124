@@ -19,8 +19,13 @@
     margin: 7px;
 }
 
-.deleteButton {
+#priority {
     order: 3;
+    
+}
+
+.deleteButton {
+    order: 4;
     font-family: "Times New Roman", serif;
     font-size: 13px;
 }
