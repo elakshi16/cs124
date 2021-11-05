@@ -5,7 +5,8 @@
 
 .taskTextField {
     height: 30px;
-    margin: 5px;
+    width: 300px;
+    margin: 20px;
     font-size: 20px;
     font-family: "Times New Roman", serif;
 }

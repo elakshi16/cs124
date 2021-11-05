@@ -1,35 +1,21 @@
 Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
-We made a number of significant design changes from Lab 1, as our design did not work particularly well for a smaller
-interfaces. In this vein, we increased the size on all of our text, and made the various items on our app larger. This
-resulted in the App being readable on a smaller screen. We also decided to make the colors present in the styling more
-consistent with each other so it would be less harsh visually.
+We did not make too many design decisions compared to Lab 2. The major visual element we added to our app was the 
+priority levels the user can add to various tasks. The goal for this element was for the user to be able to tell the
+priority level of a task. It was important to make this element fairly large for the user to see.
 
-For functionality, the major change we made was getting rid of a tabular setup where the user could switch tabs between
-an all tasks tab and an incomplete tasks tab. Instead, we replaced this with a button where the user could click between
-showing all tasks and showing incomplete tasks. This was largely due to our ability to more easily implement buttons,
-but we also thought buttons would be better for usability.
+Another design decision we made was to place the sorting mechanism between the add task element and the table holding 
+the tasks. We placed this element here to connect it to the task table and make it clear that the buttons controlled the
+table.
 
-Another functional change we made was getting rid of the edit button. This was entirely due to implementation and
-restrictions on time. We spent awhile trying to implement the edit button, but we ran into issues with getting other
-components to work. Thus, we used an editable field that allows the user to click and edit the field.
-
-Several design elements were maintained from previous iterations. We kept creating a new task at the top of the
-page so that user could access the most essential item of teh checklist - putting items on the checklist. We maintained
-the delete button that allows users to get rid of checklist items once they are on the list. And lastly we kept the
-Delete All button at the bottom of the app, because we found it worked well for its intended use.
+We also centered the tasks within each row of the table in order to make the checkbox more visible.
 <br>
 <br>
 
 **Alternative Designs** <br>
-Alternative Designs that were thought about were mostly related to the idea of tabs versus buttons. Our original design 
-had tabs, and we had hoped to implement them, but due to a lack of time and comfortability with the implementation of 
-tabs we decided to replace the tabs with a button. 
-
-Another alternative designs suggested was putting a strike through a task once it was marked as complete. Ultimately we 
-decided against doing this due to the way our code was set up to access the checked component. It ended being a bit hard
-to access the property in the CSS, so we decided to go with the version that we had.
+Alternative designs that were discussed included having the priority buttons be smaller, but we realized this made the
+buttons hard to use, particularly when moving across browser types. 
 <br>
 <br>
 

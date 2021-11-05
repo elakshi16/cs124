@@ -22,8 +22,8 @@ const db = firebase.firestore()
 
 function App() {
     const name = "elakshi16-tasks";
-    const collection = db.collection(name);
-    const query = collection;
+    const collection = db.collection('tasks');
+    // const query = collection;
     const [value, loading, error] = useCollection(collection);
 
     const taskArray = [];
@@ -42,7 +42,7 @@ function App() {
         // setData(data.concat([{id: generateUniqueID(), title: task}]));
 
         const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
-        query.doc(task.id).set(task);
+        collection.doc(task.id).set(task);
     }
 
     function handleTaskFieldChange(taskId, field, newVal) {
@@ -57,18 +57,18 @@ function App() {
 
         const updateTask = {[field]:newVal };
         console.log(field, newVal);
-        query.doc(taskId).update(updateTask);
+        collection.doc(taskId).update(updateTask);
     }
 
     function handleDeleteTasks(deletedIds) {
         // setData(data.filter(task => task.id !== deletedId));
         for (let i=0; i < deletedIds.length; i++){
-            query.doc(deletedIds[i]).delete();
+            collection.doc(deletedIds[i]).delete();
         }
     }
 
     function sortBy(field) {
-        query.orderBy(field)
+        // collection.doc().orderBy(field)
         console.log(taskArray);
     }
 
