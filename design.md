@@ -10,6 +10,9 @@ the tasks. We placed this element here to connect it to the task table and make 
 table.
 
 We also centered the tasks within each row of the table in order to make the checkbox more visible.
+
+Lastly, we made the Add task box slightly larger, in order to balance out the space taken up by the task table and 
+sorting element.
 <br>
 <br>
 
@@ -30,26 +33,32 @@ This is the opening image of the app. The user can now proceed to insert a new t
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
 
-![](docs/Lab2_screenshots/openApp.png)
+![](docs/Screenshots/openApp.png)
 
 -----
 
 Once a user inserts a task the app will look like the following.
 
-![](docs/Lab2_screenshots/oneTask.png)
+![](docs/Screenshots/oneTask.png)
+
+----
+
+The user can then set the priority for the task by clicking one of the three buttons on the task line.
+
+![](docs/Screenshots/oneTask_priority.png)
 
 ----
 
 The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
 is what the app will look like if the user adds more tasks.
 
-![](docs/Lab2_screenshots/moreTasks.png)
+![](docs/Screenshots/moreTasks.png)
 
 ----
 
 Once tasks are complete the user can click on the checkbox and mark a task as complete.
 
-![](docs/Lab2_screenshots/someChecked.png)
+![](docs/Screenshots/someChecked.png)
 
 ----
 
@@ -57,7 +66,7 @@ At this point, if the user wants to make their checklist easier to read but don'
 just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
 to the one below.
 
-![](docs/Lab2_screenshots/hideCompleted.png)
+![](docs/Screenshots/hideCompleted.png)
 
 ----
 
@@ -66,36 +75,28 @@ in the previous screenshot.
 
 If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
 
-![](docs/Lab2_screenshots/deleteTask.png)
+![](docs/Screenshots/deleteTask.png)
 
 ----
 
 Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
 view of the App.
 
-![](docs/Lab2_screenshots/allChecked.png)
+![](docs/Screenshots/allChecked.png)
 
-![](docs/Lab2_screenshots/openApp.png)
+![](docs/Screenshots/openApp.png)
 <br><br>
 
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-One of our main challenges was in implementing the Hide Complete Tasks button. This was a two-step process because we needed
-to make sure the data was only being changed (to hide specific tasks) when the 'Hide Complete Tasks' button was pressed. In
-addition, we needed to keep track of completed (or checked) tasks. This was especially challenging because we had initially
-tried to change the completed field for tasks (which is immutable). After assistance from Prof. Rhodes, we were able to implement
-keeping track of completed status using 'setData'.
-
-Another big challenge we had was in creating the AddTask component. Specifically, it was difficult to figure out adding a 
-new task into the data. While we knew that we would need to use 'setData', we had some trouble with getting the correct JavaScript
-syntax for adding an element to a list. With more time, we aim to figure out how to add an element to the 
-front of a list rather than the back. Then, the newly added tasks would be added to the top.
+Our main challenge with this lab was dealing with firestore. We struggled to include the correct doc references and make
+the correct queries so that we could access the data we wanted to use. As a result of this we struggled to get our app
+to render and perform the functionality we wanted it to.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-We are most proud of the fact that we were able to get our button toggling between showing all the tasks and showing 
-the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of tracing properties through
-different components. Because there were so many property names to keep track of, it was important to stay consistent with
-what we called each property. Ultimately, we were able to use a 'handleTextFieldChange' function and a showCompleted state
-together in order to implement this function. In the end, we were able to get it working as we intended.
+We are most proud of the fact that we were able to get firestore working in the end. We were really struggling to get 
+that functionality implemented and while we were trying to implement the data storage, we ended up breaking the app a 
+couple of times. We were really glad we were able to get the app rendering correctly, and able to store data at the same 
+time.
