@@ -23,9 +23,7 @@ buttons hard to use, particularly when moving across browser types.
 <br>
 
 **User Testing** <br>
-The user testing went well, the user was able to accomplish all the tasks we set out for them. The one issue they had 
-was with finding the checkbox. After looking at the App we realized we did not implement the color backgrounds for each 
-individual task. We then proceeded to implement this feature.
+We did not have any additional user testing for this lab.
 
 Final Design Images
 ------------------------------------------------------
@@ -92,11 +90,11 @@ Reflection
 **Challenges**<br>
 Our main challenge with this lab was dealing with firestore. We struggled to include the correct doc references and make
 the correct queries so that we could access the data we wanted to use. As a result of this we struggled to get our app
-to render and perform the functionality we wanted it to.
+to render and perform the functionality we wanted it to. In the end, we were unable to get the sort by buttons functional.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-We are most proud of the fact that we were able to get firestore working in the end. We were really struggling to get 
-that functionality implemented and while we were trying to implement the data storage, we ended up breaking the app a 
-couple of times. We were really glad we were able to get the app rendering correctly, and able to store data at the same 
-time.
+We are most proud of the fact that we were able to get firestore mostly working in the end (except for sorting by different 
+fields). We were really struggling to get that functionality implemented and while we were trying to implement the data storage, 
+we ended up breaking the app a couple of times. We were really glad we were able to get the app rendering correctly, and 
+able to store data at the same time.

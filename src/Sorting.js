@@ -5,9 +5,9 @@ function Sorting(props) {
     return (<div className={'Sorting'}>
         <p>Sort by: </p>
         <div id={'sortButton'}>
-            <button className={'sortTon'} onClick={e => props.onSelection('creationDate')}>Creation Date</button>
-            <button className={'sortTon'} onClick={e => props.onSelection('name')}>Name</button>
-            <button className={'sortTon'} onClick={e => props.onSelection('priority')}>Priority</button>
+            <button className={'sortTon'} onClick={e => props.onSelection('creationDate', 'desc')}>Creation Date</button>
+            <button className={'sortTon'} onClick={e => props.onSelection('title', 'asc')}>Name</button>
+            <button className={'sortTon'} onClick={e => props.onSelection('priority', 'desc')}>Priority</button>
         </div>
     </div>);
 }

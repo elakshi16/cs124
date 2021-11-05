@@ -22,53 +22,40 @@ const db = firebase.firestore()
 
 function App() {
     const name = "elakshi16-tasks";
-    const collection = db.collection('tasks');
-    // const query = collection;
-    const [value, loading, error] = useCollection(collection);
+    const query = db.collection(name);
+
+    const [value, loading, error] = useCollection(query);
 
     const taskArray = [];
-    // const showCompleted = true;
+
     if (value) {
         for (let i=0; i<value.docs.length; i++) {
             taskArray[i] = value.docs[i].data();
         }
     }
 
-    // const [data, setData] = useState(initialData);
     const [showCompleted, setShowCompleted] = useState(true);
     const filteredList = taskArray.filter((task) => showCompleted || !task.completed);
 
     function handleAddTask(taskName) {
-        // setData(data.concat([{id: generateUniqueID(), title: task}]));
-
         const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
-        collection.doc(task.id).set(task);
+        query.doc(task.id).set(task);
     }
 
     function handleTaskFieldChange(taskId, field, newVal) {
-        // if (field === "title") {
-        //     setData(data.map(elem => elem.id === id ? {...elem, title: newVal} : elem));
-        //
-        // }
-        // if (field === "completed") {
-        //     setData(data.map(elem => elem.id === id ? {...elem, completed: newVal} : elem));
-        //
-        // }
-
         const updateTask = {[field]:newVal };
         console.log(field, newVal);
-        collection.doc(taskId).update(updateTask);
+        query.doc(taskId).update(updateTask);
     }
 
     function handleDeleteTasks(deletedIds) {
-        // setData(data.filter(task => task.id !== deletedId));
         for (let i=0; i < deletedIds.length; i++){
-            collection.doc(deletedIds[i]).delete();
+            query.doc(deletedIds[i]).delete();
         }
     }
 
-    function sortBy(field) {
-        // collection.doc().orderBy(field)
+    function sortBy(field, direction) {
+        query.orderBy(field, direction);
         console.log(taskArray);
     }
 
