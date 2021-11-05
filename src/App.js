@@ -62,13 +62,14 @@ function App() {
 
     function handleDeleteTasks(deletedIds) {
         // setData(data.filter(task => task.id !== deletedId));
-        for (let i=0; i < filteredList.length; i++){
+        for (let i=0; i < deletedIds.length; i++){
             query.doc(deletedIds[i]).delete();
         }
     }
 
     function sortBy(field) {
-
+        query.orderBy(field)
+        console.log(taskArray);
     }
 
 

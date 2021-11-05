@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 5px;
     background-color: powderblue;
+    align-items: center;
 }
 
 .check {
@@ -25,10 +26,12 @@
 
 .filled {
     background-color: black;
+    height: 15px;
 }
 
 .empty {
     background-color: white;
+    height: 15px;
 }
 
 
