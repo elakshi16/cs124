@@ -1,0 +1,22 @@
+.Sorting {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+p {
+    margin-left: auto;
+    font-family: "Times New Roman", serif;
+    font-size: 13px;
+}
+
+#sortButton {
+    margin-left: 5px;
+}
+
+.sortTon {
+    height: 30px;
+    font-family: "Times New Roman", serif;
+    margin: 5px;
+    font-size: 13px;
+}

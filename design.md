@@ -1,42 +1,29 @@
 Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
-We made a number of significant design changes from Lab 1, as our design did not work particularly well for a smaller
-interfaces. In this vein, we increased the size on all of our text, and made the various items on our app larger. This
-resulted in the App being readable on a smaller screen. We also decided to make the colors present in the styling more
-consistent with each other so it would be less harsh visually.
+We did not make too many design decisions compared to Lab 2. The major visual element we added to our app was the 
+priority levels the user can add to various tasks. The goal for this element was for the user to be able to tell the
+priority level of a task. It was important to make this element fairly large for the user to see.
 
-For functionality, the major change we made was getting rid of a tabular setup where the user could switch tabs between
-an all tasks tab and an incomplete tasks tab. Instead, we replaced this with a button where the user could click between
-showing all tasks and showing incomplete tasks. This was largely due to our ability to more easily implement buttons,
-but we also thought buttons would be better for usability.
+Another design decision we made was to place the sorting mechanism between the add task element and the table holding 
+the tasks. We placed this element here to connect it to the task table and make it clear that the buttons controlled the
+table.
 
-Another functional change we made was getting rid of the edit button. This was entirely due to implementation and
-restrictions on time. We spent awhile trying to implement the edit button, but we ran into issues with getting other
-components to work. Thus, we used an editable field that allows the user to click and edit the field.
+We also centered the tasks within each row of the table in order to make the checkbox more visible.
 
-Several design elements were maintained from previous iterations. We kept creating a new task at the top of the
-page so that user could access the most essential item of teh checklist - putting items on the checklist. We maintained
-the delete button that allows users to get rid of checklist items once they are on the list. And lastly we kept the
-Delete All button at the bottom of the app, because we found it worked well for its intended use.
+Lastly, we made the Add task box slightly larger, in order to balance out the space taken up by the task table and 
+sorting element.
 <br>
 <br>
 
 **Alternative Designs** <br>
-Alternative Designs that were thought about were mostly related to the idea of tabs versus buttons. Our original design 
-had tabs, and we had hoped to implement them, but due to a lack of time and comfortability with the implementation of 
-tabs we decided to replace the tabs with a button. 
-
-Another alternative designs suggested was putting a strike through a task once it was marked as complete. Ultimately we 
-decided against doing this due to the way our code was set up to access the checked component. It ended being a bit hard
-to access the property in the CSS, so we decided to go with the version that we had.
+Alternative designs that were discussed included having the priority buttons be smaller, but we realized this made the
+buttons hard to use, particularly when moving across browser types. 
 <br>
 <br>
 
 **User Testing** <br>
-The user testing went well, the user was able to accomplish all the tasks we set out for them. The one issue they had 
-was with finding the checkbox. After looking at the App we realized we did not implement the color backgrounds for each 
-individual task. We then proceeded to implement this feature.
+We did not have any additional user testing for this lab.
 
 Final Design Images
 ------------------------------------------------------
@@ -44,26 +31,32 @@ This is the opening image of the app. The user can now proceed to insert a new t
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
 
-![](docs/Lab2_screenshots/openApp.png)
+![](docs/Screenshots/openApp.png)
 
 -----
 
 Once a user inserts a task the app will look like the following.
 
-![](docs/Lab2_screenshots/oneTask.png)
+![](docs/Screenshots/oneTask.png)
+
+----
+
+The user can then set the priority for the task by clicking one of the three buttons on the task line.
+
+![](docs/Screenshots/oneTask_priority.png)
 
 ----
 
 The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
 is what the app will look like if the user adds more tasks.
 
-![](docs/Lab2_screenshots/moreTasks.png)
+![](docs/Screenshots/moreTasks.png)
 
 ----
 
 Once tasks are complete the user can click on the checkbox and mark a task as complete.
 
-![](docs/Lab2_screenshots/someChecked.png)
+![](docs/Screenshots/someChecked.png)
 
 ----
 
@@ -71,7 +64,7 @@ At this point, if the user wants to make their checklist easier to read but don'
 just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
 to the one below.
 
-![](docs/Lab2_screenshots/hideCompleted.png)
+![](docs/Screenshots/hideCompleted.png)
 
 ----
 
@@ -80,36 +73,28 @@ in the previous screenshot.
 
 If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
 
-![](docs/Lab2_screenshots/deleteTask.png)
+![](docs/Screenshots/deleteTask.png)
 
 ----
 
 Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
 view of the App.
 
-![](docs/Lab2_screenshots/allChecked.png)
+![](docs/Screenshots/allChecked.png)
 
-![](docs/Lab2_screenshots/openApp.png)
+![](docs/Screenshots/openApp.png)
 <br><br>
 
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-One of our main challenges was in implementing the Hide Complete Tasks button. This was a two-step process because we needed
-to make sure the data was only being changed (to hide specific tasks) when the 'Hide Complete Tasks' button was pressed. In
-addition, we needed to keep track of completed (or checked) tasks. This was especially challenging because we had initially
-tried to change the completed field for tasks (which is immutable). After assistance from Prof. Rhodes, we were able to implement
-keeping track of completed status using 'setData'.
-
-Another big challenge we had was in creating the AddTask component. Specifically, it was difficult to figure out adding a 
-new task into the data. While we knew that we would need to use 'setData', we had some trouble with getting the correct JavaScript
-syntax for adding an element to a list. With more time, we aim to figure out how to add an element to the 
-front of a list rather than the back. Then, the newly added tasks would be added to the top.
+Our main challenge with this lab was dealing with firestore. We struggled to include the correct doc references and make
+the correct queries so that we could access the data we wanted to use. As a result of this we struggled to get our app
+to render and perform the functionality we wanted it to. In the end, we were unable to get the sort by buttons functional.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-We are most proud of the fact that we were able to get our button toggling between showing all the tasks and showing 
-the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of tracing properties through
-different components. Because there were so many property names to keep track of, it was important to stay consistent with
-what we called each property. Ultimately, we were able to use a 'handleTextFieldChange' function and a showCompleted state
-together in order to implement this function. In the end, we were able to get it working as we intended.
+We are most proud of the fact that we were able to get firestore mostly working in the end (except for sorting by different 
+fields). We were really struggling to get that functionality implemented and while we were trying to implement the data storage, 
+we ended up breaking the app a couple of times. We were really glad we were able to get the app rendering correctly, and 
+able to store data at the same time.

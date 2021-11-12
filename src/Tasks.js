@@ -3,10 +3,12 @@ import React, {useState} from "react";
 import './Tasks.css';
 
 function Tasks(props) {
+    const [selectedId, setSelectedId] = useState(null);
     return (<div className={'Tasks'}>
         {props.list.map(elem => <div>
                                     <Task
                                         id = {elem.id}
+                                        priority={elem.priority}
                                         onTaskFieldChange={props.onTaskFieldChange}
                                         className='Task'
                                         onDeleteTask={props.onDeleteTask}

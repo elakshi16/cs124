@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin: 5px;
     background-color: powderblue;
+    align-items: center;
 }
 
 .check {
@@ -19,8 +20,23 @@
     margin: 7px;
 }
 
-.deleteButton {
+#priority {
     order: 3;
+}
+
+.filled {
+    background-color: darkgrey;
+    height: 15px;
+}
+
+.empty {
+    background-color: white;
+    height: 15px;
+}
+
+
+.deleteButton {
+    order: 4;
     font-family: "Times New Roman", serif;
     font-size: 13px;
 }
