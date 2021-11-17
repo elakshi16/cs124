@@ -3,6 +3,8 @@ import Sorting from "./Sorting";
 import Tasks from "./Tasks";
 import React, {useState} from "react";
 import AddTask from "./AddTask";
+import List from "./List";
+import Lists from "./Lists"
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
@@ -10,19 +12,19 @@ import {useCollection} from "react-firebase-hooks/firestore";
 // const initialData = []
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBQA_MiorvTQaHY9HrIgJ6Uw72Z4OHj6yI",
-    authDomain: "cs124-lab-1dfa3.firebaseapp.com",
-    projectId: "cs124-lab-1dfa3",
-    storageBucket: "cs124-lab-1dfa3.appspot.com",
-    messagingSenderId: "323003445992",
-    appId: "1:323003445992:web:52f18fb31d71a8d31fcf5d",
-    measurementId: "G-X478D1M9GH"
+    apiKey: "AIzaSyDeSrL-YstSATx0OqeATHzUBttu5Qxz9tM",
+    authDomain: "task-app-34b9f.firebaseapp.com",
+    projectId: "task-app-34b9f",
+    storageBucket: "task-app-34b9f.appspot.com",
+    messagingSenderId: "982606058122",
+    appId: "1:982606058122:web:ffce85d25a8dfd5c38d373",
+    measurementId: "G-039RP6Z1B1"
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 function App() {
-    const name = "elakshi16-tasks";
+    const name = "Tasks";
     const query = db.collection(name);
 
     const [field, setField] = useState("title")
@@ -78,6 +80,9 @@ function App() {
                 <button className={'largeButton'} onClick={e => handleDeleteTasks(filteredList.map((task) => task.id))}>Delete All</button>
                 <button className="largeButton"
                         onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
+            </div>
+            <div>
+                <button>Add List</button>
             </div>
         </div>
     );
