@@ -1,15 +1,15 @@
-import './App.css';
+import React, {useState} from "react";
 import Sorting from "./Sorting";
 import Tasks from "./Tasks";
-import React, {useState} from "react";
 import AddTask from "./AddTask";
 import List from "./List";
 import Lists from "./Lists"
+
+import './App.css';
+
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
-
-// const initialData = []
 
 const firebaseConfig = {
     apiKey: "AIzaSyDeSrL-YstSATx0OqeATHzUBttu5Qxz9tM",
@@ -20,6 +20,7 @@ const firebaseConfig = {
     appId: "1:982606058122:web:ffce85d25a8dfd5c38d373",
     measurementId: "G-039RP6Z1B1"
 };
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
@@ -83,6 +84,8 @@ function App() {
             </div>
             <div>
                 <button>Add List</button>
+                <List/>
+                <Lists/>
             </div>
         </div>
     );

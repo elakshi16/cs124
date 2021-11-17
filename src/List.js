@@ -1,6 +1,8 @@
 import React from "react";
 
 function List(){
-
+    return(
+        <p> list </p>
+    )
 }
 export default List;
