@@ -25,7 +25,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 function App() {
-    const name = "Tasks";
+    const name = "Lists";
     const query = db.collection(name);
 
     const [field, setField] = useState("title")
