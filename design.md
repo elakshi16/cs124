@@ -1,124 +1,115 @@
 Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
-We decided to place the area where the user could create a new task at the top of the page so that user would have
-readily available access to the most basic function of a checklist - putting items on teh checklist. Also, we made sure to make 
-the textbox fairly large so that a reasonably long input would be displayed at once in the textbox. Next we placed two
-tabs labeled "ALL" and "INCOMPLETE" where the user could sort the items on their checklist. "ALL" is intended to display
-all checklist items whereas "INCOMPLETE" displays only incomplete checklist items. The next major design decision we
-made was to have an edit and delete button on every checklist item line. We felt these buttons were important as they 
-allowed the user to edit and delete specific line items. Lastly at the bottom we placed "Delete Completed" and "Delete 
-All" buttons. We chose these two buttons as we thought a user would either want to clean up their list by deleting the 
-completed items or start a completely new list in which case they would want to delete all. We specifically made the decision
-to add the "Delete Completed" button to both tabs so that someone on the "INCOMPLETE" tab does not have to navigate back
-to the "ALL" tab if they are sure they want to get rid of any completed tasks. If the user wants to check that they truly
-wish to delete all completed tasks, then they could simply navigate back to the "ALL" tab to do so.
+We made a number of significant design changes from Lab 1, as our design did not work particularly well for a smaller
+interfaces. In this vein, we increased the size on all of our text, and made the various items on our app larger. This
+resulted in the App being readable on a smaller screen. We also decided to make the colors present in the styling more
+consistent with each other so it would be less harsh visually.
+
+For functionality, the major change we made was getting rid of a tabular setup where the user could switch tabs between
+an all tasks tab and an incomplete tasks tab. Instead, we replaced this with a button where the user could click between
+showing all tasks and showing incomplete tasks. This was largely due to our ability to more easily implement buttons,
+but we also thought buttons would be better for usability.
+
+Another functional change we made was getting rid of the edit button. This was entirely due to implementation and
+restrictions on time. We spent awhile trying to implement the edit button, but we ran into issues with getting other
+components to work. Thus, we used an editable field that allows the user to click and edit the field.
+
+Several design elements were maintained from previous iterations. We kept creating a new task at the top of the
+page so that user could access the most essential item of teh checklist - putting items on the checklist. We maintained
+the delete button that allows users to get rid of checklist items once they are on the list. And lastly we kept the
+Delete All button at the bottom of the app, because we found it worked well for its intended use.
 <br>
 <br>
+
 **Alternative Designs** <br>
-Some alternative designs we considered were different labels of components and different designs of buttons. We ended
-up going with our final design due to other hurdles we encountered while building this checklist. We also considered only 
-adding the "Delete Completed" button to the "ALL" tab, but we decided against this due to the reasons discussed above.
+Alternative Designs that were thought about were mostly related to the idea of tabs versus buttons. Our original design 
+had tabs, and we had hoped to implement them, but due to a lack of time and comfortability with the implementation of 
+tabs we decided to replace the tabs with a button. 
+
+Another alternative designs suggested was putting a strike through a task once it was marked as complete. Ultimately we 
+decided against doing this due to the way our code was set up to access the checked component. It ended being a bit hard
+to access the property in the CSS, so we decided to go with the version that we had.
+<br>
+<br>
 
 **User Testing** <br>
-We did not do any outright user testing, but we did consider our own relationship with this checklist and what we might 
-want out of the design.
+The user testing went well, the user was able to accomplish all the tasks we set out for them. The one issue they had 
+was with finding the checkbox. After looking at the App we realized we did not implement the color backgrounds for each 
+individual task. We then proceeded to implement this feature.
 
-**Final Design Images**<br>
-See below for screenshots of our webpage through different stages of each of the six tasks.
+Final Design Images
+------------------------------------------------------
+This is the opening image of the app. The user can now proceed to insert a new task in the text box and press the '+'
+button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
+they will not do anything.
 
+![](docs/Lab2_screenshots/openApp.png)
+
+-----
+
+Once a user inserts a task the app will look like the following.
+
+![](docs/Lab2_screenshots/oneTask.png)
+
+----
+
+The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
+is what the app will look like if the user adds more tasks.
+
+![](docs/Lab2_screenshots/moreTasks.png)
+
+----
+
+Once tasks are complete the user can click on the checkbox and mark a task as complete.
+
+![](docs/Lab2_screenshots/someChecked.png)
+
+----
+
+At this point, if the user wants to make their checklist easier to read but don't want to delete their completed items 
+just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
+to the one below.
+
+![](docs/Lab2_screenshots/hideCompleted.png)
+
+----
+
+The user can then work with the checklist at this point or press the show all tasks button to return to the view shown 
+in the previous screenshot.
+
+If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
+
+![](docs/Lab2_screenshots/deleteTask.png)
+
+----
+
+Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
+view of the App.
+
+![](docs/Lab2_screenshots/allChecked.png)
+
+![](docs/Lab2_screenshots/openApp.png)
+<br><br>
+
+Reflection
+------------------------------------------------------
 **Challenges**<br>
-One specific challenge we faced is with flexbox and gridbox design. We intitially tried to create one gridbox that dealt
-with the outer table (everything other than the create new task bar) and adding each new task as a row in the gridbox. We were having trouble controlling grandchild
-elements and eventually came to the realization that gridbox/flexbox can only control direct children (with the guidance of Prof. Rhodes). We then changed 
-the structure to a gridbox where every line that contained a checklist item was its own flexbox. By breaking up what 
-various parents had to do, we were able to achieve the desired design.
+One of our main challenges was in implementing the Hide Complete Tasks button. This was a two-step process because we needed
+to make sure the data was only being changed (to hide specific tasks) when the 'Hide Complete Tasks' button was pressed. In
+addition, we needed to keep track of completed (or checked) tasks. This was especially challenging because we had initially
+tried to change the completed field for tasks (which is immutable). After assistance from Prof. Rhodes, we were able to implement
+keeping track of completed status using 'setData'.
+
+Another big challenge we had was in creating the AddTask component. Specifically, it was difficult to figure out adding a 
+new task into the data. While we knew that we would need to use 'setData', we had some trouble with getting the correct JavaScript
+syntax for adding an element to a list. With more time, we aim to figure out how to add an element to the 
+front of a list rather than the back. Then, the newly added tasks would be added to the top.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-One design choice that we are most proud of is giving the user a choice between an all tasks tab and an incomplete tasks 
-tab. While it may not seem as necessary when the list only contains three or four items, if the list builds up, it will
-be very convenient to see what still needs to be completed at the click of a button.
-
-Task 1
-------------------------------------------------------
-Start:
-Requires task1_start_intermediate.html and style.css
-![Task 1 Start](Screenshots/task1_start.png)
-Intermediate:
-Requires task1_start_intermediate.html and style.css
-![Task 1 Intermediate Part 1](Screenshots/task1_intermediate.png)
-![Task 1 Intermediate Part 2](Screenshots/task1_intermediate_p2.png)
-End:
-Requires task1_end.html and style.css
-![Task 1 End](Screenshots/task1_end.png)
-
-Task 2
-------------------------------------------------------
-Start:
-Requires task2_start_intermediate.html and style.css
-![Task 1 Start](Screenshots/task2_start.png)
-Intermediate:
-Requires task2_start_intermediate.html and style.css
-![Task 1 Intermediate Part 1](Screenshots/task2_intermediate.png)
-![Task 1 Intermediate Part 2](Screenshots/task2_intermediate_p2.png)
-End:
-Requires task2_end.html and style.css
-![Task 1 End](Screenshots/task2_end.png)
-
-Task 3
-------------------------------------------------------
-Start:
-Requires task3_alltab_start_intermediate_end.html and style.css
-![Task 1 Start](Screenshots/task3_start.png)
-Intermediate:
-Requires task3_alltab_start_intermediate_end.html and style.css
-![Task 1 Intermediate](Screenshots/task3_intermediate.png)
-End:
-For the end screen, follow comments on coloring tabs in CSS file (blue is the tab you are one and red is the other tab).
-<br>
-Also, the strikethrough requires an uncomment of a line in the CSS file under #checkcheck3
-Requires task3_alltab_start_intermediate_end.html and style.css
-![Task 1 End (All Tab)](Screenshots/task3_end_all_tab.png)
-Requires task3_incompletetab_start_intermediate_end.html and style.css
-![Task 1 End (Incomplete Tasks Tab)](Screenshots/task3_end_incomplete_tab.png)
-
-Task 4
-------------------------------------------------------
-Start:
-Requires task4_start.html and style.css
-![](Screenshots/task4_start.png)
-Intermediate:
-Requires task4_start.html, style.css, and clicking on the edit button.
-![](Screenshots/task4_intermediate.png)
-Requires task4_intermediate.html, style.css, and the user typing in the renamed title.
-![](Screenshots/task4_intermediate_p2.png)
-End:
-Requires task4_end.html and style.css
-![](Screenshots/task4_end.png)
-
-Task 5
-------------------------------------------------------
-Start:
-Requires task5,6_start_intermediate.html, style.css, along with a manual checking of the "Eat Lunch" task. 
-![](Screenshots/task5_start.png)
-Intermediate:
-Requires task5,6_start_intermediate.html, style.css, clicking on the incomplete tab, and manual check of "Eat Lunch".
-![](Screenshots/task5_intermediate.png)
-End:
-Requires task5,6_end.html, style.css, and the uncommenting of light blue as the background color for "incomplete", 
-light coral for "all"
-![](Screenshots/task5_end.png)
-
-Task 6
-------------------------------------------------------
-Start:
-Requires task5,6_start_intermediate.html, style.css, and manual clicking of the "Eat Lunch" task checkbox.
-![](Screenshots/task6_start.png)
-Intermediate:
-Requires task5,6_start_intermediate.html, style.css, manual clicking of "Eat Lunch" checkbox, and clicking on the 
-"Delete Completed" button.
-![](Screenshots/task6_intermediate.png)
-End:
-Requires task 5,6_end.html and style.css
-![](Screenshots/task6_end.png)
+We are most proud of the fact that we were able to get our button toggling between showing all the tasks and showing 
+the incomplete tasks. This feature took quite a lot of time to get right and involved a lot of tracing properties through
+different components. Because there were so many property names to keep track of, it was important to stay consistent with
+what we called each property. Ultimately, we were able to use a 'handleTextFieldChange' function and a showCompleted state
+together in order to implement this function. In the end, we were able to get it working as we intended.
