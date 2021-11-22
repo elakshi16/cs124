@@ -33,15 +33,13 @@ function App() {
     const [value, loading, error] = useCollection(query.orderBy(field, direction));
 
     const taskArray = [];
+    const listArray = [];
 
     if (value) {
         for (let i=0; i<value.docs.length; i++) {
             taskArray[i] = value.docs[i].data();
         }
     }
-
-    const [showCompleted, setShowCompleted] = useState(true);
-
 
     return (<div className={'App'}>
             {loading && <p>Page is loading</p>}
