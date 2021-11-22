@@ -6,7 +6,7 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 function Lists(props) {
     return (<div className={'Tasks'}>
         {props.listList.map(elem => <div>
-            <List id = {generateUniqueID}/>
+            <List id = {elem}/>
         </div>)}
     </div>);
 }

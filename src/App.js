@@ -25,29 +25,20 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 function App() {
-    const name = "Lists";
-    const query = db.collection(name);
-
-    const [field, setField] = useState("creationDate")
-    const [direction, setDirection] = useState("desc")
-    const [value, loading, error] = useCollection(query.orderBy(field, direction));
-
-    const taskArray = [];
     const listArray = [];
 
-    if (value) {
-        for (let i=0; i<value.docs.length; i++) {
-            taskArray[i] = value.docs[i].data();
-        }
+    function handleAddList(){
+        listArray.append(generateUniqueID())
     }
 
+
     return (<div className={'App'}>
-            {loading && <p>Page is loading</p>}
 
             <h1>Checklist App</h1>
+            {/*<Lists listList={listArray}/>*/}
             <List/>
             <div className={'endButtons'}>
-                <button className={'largeButton'}>Add List</button>
+                <button className={'largeButton'} onClick={handleAddList}>Add List</button>
             </div>
         </div>
     );
