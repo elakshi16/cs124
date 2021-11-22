@@ -28,8 +28,8 @@ function App() {
     const name = "Lists";
     const query = db.collection(name);
 
-    const [field, setField] = useState("title")
-    const [direction, setDirection] = useState("asc")
+    const [field, setField] = useState("creationDate")
+    const [direction, setDirection] = useState("desc")
     const [value, loading, error] = useCollection(query.orderBy(field, direction));
 
     const taskArray = [];
@@ -41,51 +41,15 @@ function App() {
     }
 
     const [showCompleted, setShowCompleted] = useState(true);
-    const filteredList = taskArray.filter((task) => showCompleted || !task.completed);
-
-    function handleAddTask(taskName) {
-        const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
-        query.doc(task.id).set(task);
-    }
-
-    function handleTaskFieldChange(taskId, field, newVal) {
-        const updateTask = {[field]:newVal };
-        console.log(field, newVal);
-        query.doc(taskId).update(updateTask);
-    }
-
-    function handleDeleteTasks(deletedIds) {
-        for (let i=0; i < deletedIds.length; i++){
-            query.doc(deletedIds[i]).delete();
-        }
-    }
-
-    function sortBy(field, direction) {
-        setField(field)
-        setDirection(direction)
-    }
-
 
 
     return (<div className={'App'}>
             {loading && <p>Page is loading</p>}
 
             <h1>Checklist App</h1>
-            <AddTask className={'addTask'}
-                     onAddTask={handleAddTask}/>
-            <Sorting classname={"sort"} onSelection={sortBy}/>
-            <Tasks className={'Tasks'} list={filteredList} onTaskFieldChange={handleTaskFieldChange}
-                   onDeleteTask={handleDeleteTasks}/>
+            <List/>
             <div className={'endButtons'}>
-                {/*follow directions for delete task but apply to all, don't filter anything out*/}
-                <button className={'largeButton'} onClick={e => handleDeleteTasks(filteredList.map((task) => task.id))}>Delete All</button>
-                <button className="largeButton"
-                        onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
-            </div>
-            <div>
-                <button>Add List</button>
-                <List/>
-                <Lists/>
+                <button className={'largeButton'}>Add List</button>
             </div>
         </div>
     );
