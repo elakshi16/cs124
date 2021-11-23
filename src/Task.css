@@ -9,7 +9,7 @@
 #beginGroup {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
 }
 
@@ -60,10 +60,12 @@
     align-items: center;
 }
 
-@media screen and (max-width: 400px) {
-    .priority {
+@media screen and (max-width: 420px) {
+    #priority {
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
+        margin: 5px;
     }
     .writing {
         width: 50%;
