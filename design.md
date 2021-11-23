@@ -1,24 +1,21 @@
 Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
-We did not make too many design decisions compared to Lab 2. The major visual element we added to our app was the 
-priority levels the user can add to various tasks. The goal for this element was for the user to be able to tell the
-priority level of a task. It was important to make this element fairly large for the user to see.
+The major design decisions for this lab mostly involved aria-labels and how best to communicate our intent to users who 
+accessed our site via voiceOver. We had to make a decision as to how to label priority buttons so that they were read as 
+we intended (checkboxes instead of buttons), which involved ternary operators that toggled between true and false.
 
-Another design decision we made was to place the sorting mechanism between the add task element and the table holding 
-the tasks. We placed this element here to connect it to the task table and make it clear that the buttons controlled the
-table.
+Another major design decision was to flip the priority buttons to a vertical setup when the screen became narrower. This 
+allowed us to maximize space and allows the user to see all of their options at once on a mobile device. 
 
-We also centered the tasks within each row of the table in order to make the checkbox more visible.
-
-Lastly, we made the Add task box slightly larger, in order to balance out the space taken up by the task table and 
-sorting element.
+We also placed a "dummy" Add List button outside of what is considered a list of tasks because the concept of adding a
+list should be separate from what happens within a single list.
 <br>
 <br>
 
 **Alternative Designs** <br>
-Alternative designs that were discussed included having the priority buttons be smaller, but we realized this made the
-buttons hard to use, particularly when moving across browser types. 
+Alternative designs that were discussed included having a broken priority list. This did not end up working out, as it 
+was unclear to the user which buttons specified which priority.
 <br>
 <br>
 
@@ -27,6 +24,10 @@ We did not have any additional user testing for this lab.
 
 Final Design Images
 ------------------------------------------------------
+
+**The only major design change from these design images is that the priority button moved to align right and there is an
+added Add List button at the bottom of the screen (centered, below Delete All button).
+
 This is the opening image of the app. The user can now proceed to insert a new task in the text box and press the '+'
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
@@ -88,13 +89,15 @@ view of the App.
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-Our main challenge with this lab was dealing with firestore. We struggled to include the correct doc references and make
-the correct queries so that we could access the data we wanted to use. As a result of this we struggled to get our app
-to render and perform the functionality we wanted it to. In the end, we were unable to get the sort by buttons functional.
+We had several challenges during this lab. We ran into issues with resizing textboxes and grouping elements so that the 
+site would be able to correctly respond to dimension changes. 
+
+The challenge that we failed to overcome is in implementing Add List. The main issue was with managing the firestore database
+such that the top layer would be lists and each list would contain tasks. We struggled to implement the code to demonstrate
+the hierarchies we wanted. We were also unsure on how to manage state across components.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-We are most proud of the fact that we were able to get firestore mostly working in the end (except for sorting by different 
-fields). We were really struggling to get that functionality implemented and while we were trying to implement the data storage, 
-we ended up breaking the app a couple of times. We were really glad we were able to get the app rendering correctly, and 
-able to store data at the same time.
+We are most proud of the fact that VoiceOver works well with the way we formatted our app. VoiceOver is able to use both 
+the original labels, and our supplemented labels to help the user have a good idea of what is going on through an audio 
+medium.
