@@ -23,7 +23,7 @@ function App() {
 
     return (<div className={'App'}>
 
-            <h1>Checklist App</h1>
+            <h1 aria-label={"Checklist App"}>Checklist App</h1>
             {/*<Lists listList={listArray}/>*/}
             <List/>
             <div className={'endButtons'}>
