@@ -8,6 +8,7 @@ import Lists from "./Lists"
 import './App.css';
 
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
+
 import firebase from "firebase/compat";
 import {useCollection} from "react-firebase-hooks/firestore";
 
@@ -28,15 +29,15 @@ function App() {
     const listArray = [];
 
     function handleAddList(){
-        listArray.append(generateUniqueID())
+        listArray.push(generateUniqueID())
     }
 
 
     return (<div className={'App'}>
 
             <h1>Checklist App</h1>
-            {/*<Lists listList={listArray}/>*/}
-            <List/>
+            <Lists listList={listArray}/>
+            {/*<List/>*/}
             <div className={'endButtons'}>
                 <button className={'largeButton'} onClick={handleAddList}>Add List</button>
             </div>
