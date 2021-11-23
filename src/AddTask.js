@@ -12,7 +12,7 @@ function AddTask(props) {
 
     return <div className={'fullAdd'}>
             <input className="taskTextField" type="text" id ={generateUniqueID()} value={text} onChange={e => setText(e.target.value)} placeholder="Enter new task here"/>
-            <button className={'plus'} onClick={(e) => clickHandler(text)}> + </button>
+            <button aria-label={"Add task"} className={'plus'} onClick={(e) => clickHandler(text)}> + </button>
     </div>
 }
 

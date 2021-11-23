@@ -1,15 +1,22 @@
 #task {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin: 5px;
     background-color: powderblue;
+    align-items: center;
+}
+
+#beginGroup {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
     align-items: center;
 }
 
 .check {
     order: 1;
     font-size: 30px;
+    margin: 5px;
 }
 
 .writing {
@@ -18,11 +25,21 @@
     font-family: "Times New Roman", serif;
     background-color: aliceblue;
     margin: 7px;
+    /*width: 400px;*/
 }
+
+#endGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
 
 #priority {
     order: 3;
 }
+
 
 .filled {
     background-color: darkgrey;
@@ -39,4 +56,18 @@
     order: 4;
     font-family: "Times New Roman", serif;
     font-size: 13px;
+    margin: 5px;
+    align-items: center;
+}
+
+@media screen and (max-width: 420px) {
+    #priority {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 5px;
+    }
+    .writing {
+        width: 50%;
+    }
 }

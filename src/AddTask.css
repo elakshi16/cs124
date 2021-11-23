@@ -1,12 +1,13 @@
 .fullAdd {
     background: mediumpurple;
     text-align: center;
+    padding:20px;
 }
 
 .taskTextField {
     height: 30px;
     width: 300px;
-    margin: 20px;
+    margin-right: 20px;
     font-size: 20px;
     font-family: "Times New Roman", serif;
 }
@@ -14,4 +15,10 @@
 .plus {
     font-size: 20px;
     font-family: "Times New Roman", serif;
+}
+
+@media screen and (max-width: 450px) {
+    .taskTextField {
+        width: 70%;
+    }
 }
