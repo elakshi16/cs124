@@ -25,7 +25,7 @@ function App() {
     const query = db.collection(name);
 
     const [field, setField] = useState("creationDate");
-    const [direction, setDirection] = useState("asc");
+    const [direction, setDirection] = useState("desc");
     const [value, loading, error] = useCollection(query.orderBy(field, direction));
 
     const taskArray = [];
