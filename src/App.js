@@ -21,8 +21,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
 
 function App() {
-    const name = "elakshi16-tasks";
-    const query = db.collection(name);
+    const query = db.collection("elakshi16-tasks");
 
     const [field, setField] = useState("creationDate");
     const [direction, setDirection] = useState("desc");
