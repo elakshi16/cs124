@@ -24,7 +24,9 @@ function App() {
     const name = "elakshi16-tasks";
     const query = db.collection(name);
 
-    const [value, loading, error] = useCollection(query);
+    const [field, setField] = useState("creationDate");
+    const [direction, setDirection] = useState("asc");
+    const [value, loading, error] = useCollection(query.orderBy(field, direction));
 
     const taskArray = [];
 
@@ -55,8 +57,8 @@ function App() {
     }
 
     function sortBy(field, direction) {
-        query.orderBy(field, direction);
-        console.log(taskArray);
+        setField(field);
+        setDirection(direction);
     }
 
 
