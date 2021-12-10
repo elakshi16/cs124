@@ -21,6 +21,12 @@ function Lists(props) {
         props.onSelectListId(list.id);
     }
 
+    function handleDeleteLists(deletedIds) {
+        for (let i=0; i < deletedIds.length; i++){
+            query.doc(deletedIds[i]).delete();
+        }
+    }
+
     return (<div className={'Tasks'}>
         {loading && <p>Page is loading</p>}
         {error && <p>Error loading page</p>}
