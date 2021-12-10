@@ -32,32 +32,32 @@ This is the opening image of the app. The user can now proceed to insert a new t
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
 
-![](docs/Screenshots/openApp.png)
+![](Screenshots/openApp.png)
 
 -----
 
 Once a user inserts a task the app will look like the following.
 
-![](docs/Screenshots/oneTask.png)
+![](Screenshots/oneTask.png)
 
 ----
 
 The user can then set the priority for the task by clicking one of the three buttons on the task line.
 
-![](docs/Screenshots/oneTask_priority.png)
+![](Screenshots/oneTask_priority.png)
 
 ----
 
 The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
 is what the app will look like if the user adds more tasks.
 
-![](docs/Screenshots/moreTasks.png)
+![](Screenshots/moreTasks.png)
 
 ----
 
 Once tasks are complete the user can click on the checkbox and mark a task as complete.
 
-![](docs/Screenshots/someChecked.png)
+![](Screenshots/someChecked.png)
 
 ----
 
@@ -65,7 +65,7 @@ At this point, if the user wants to make their checklist easier to read but don'
 just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
 to the one below.
 
-![](docs/Screenshots/hideCompleted.png)
+![](Screenshots/hideCompleted.png)
 
 ----
 
@@ -74,16 +74,16 @@ in the previous screenshot.
 
 If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
 
-![](docs/Screenshots/deleteTask.png)
+![](Screenshots/deleteTask.png)
 
 ----
 
 Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
 view of the App.
 
-![](docs/Screenshots/allChecked.png)
+![](Screenshots/allChecked.png)
 
-![](docs/Screenshots/openApp.png)
+![](Screenshots/openApp.png)
 <br><br>
 
 Reflection

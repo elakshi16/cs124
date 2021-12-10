@@ -13,11 +13,11 @@ import {useCollection} from "react-firebase-hooks/firestore";
 
 
 function List(props) {
-    const query = props.db.collection("Tasks");
+    const tasksQuery = props.db.collection("Lists/"+ props.selectedListId + "/Tasks")
 
     const [field, setField] = useState("creationDate")
     const [direction, setDirection] = useState("desc")
-    const [value, loading, error] = useCollection(query.orderBy(field, direction));
+    const [value, loading, error] = useCollection(tasksQuery.orderBy(field, direction));
 
     const taskArray = [];
 
@@ -32,18 +32,18 @@ function List(props) {
 
     function handleAddTask(taskName) {
         const task = {id:generateUniqueID(), title:taskName, priority:0, creationDate:Date.toLocaleString()};
-        query.doc(task.id).set(task);
+        tasksQuery.doc(task.id).set(task);
     }
 
     function handleTaskFieldChange(taskId, field, newVal) {
         const updateTask = {[field]:newVal };
         console.log(field, newVal);
-        query.doc(taskId).update(updateTask);
+        tasksQuery.doc(taskId).update(updateTask);
     }
 
     function handleDeleteTasks(deletedIds) {
         for (let i=0; i < deletedIds.length; i++){
-            query.doc(deletedIds[i]).delete();
+            tasksQuery.doc(deletedIds[i]).delete();
         }
     }
 
@@ -56,6 +56,7 @@ function List(props) {
 
     return (<div className={'App'}>
             {loading && <p>Page is loading</p>}
+            {error && <p>Error loading page</p>}
 
             <AddTask className={'addTask'}
                      onAddTask={handleAddTask}/>
@@ -67,6 +68,8 @@ function List(props) {
                 <button className={'largeButton'} onClick={e => handleDeleteTasks(filteredList.map((task) => task.id))}>Delete All</button>
                 <button className="largeButton"
                         onClick={e => setShowCompleted(!showCompleted)}> {showCompleted ? "Hide Complete Tasks" : "Show All Tasks"}</button>
+                <button className="largeButton"
+                        onClick={e => props.onUnselectListId(0)}> Back to List Catalog</button>
             </div>
         </div>
     );

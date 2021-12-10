@@ -1,17 +1,8 @@
 import React, {useState} from "react";
-import Sorting from "./Sorting";
-import Tasks from "./Tasks";
-import AddTask from "./AddTask";
+import firebase from "firebase/compat";
 import List from "./List";
 import Lists from "./Lists";
-
-
 import './App.css';
-
-import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
-
-import firebase from "firebase/compat";
-import {useCollection} from "react-firebase-hooks/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDeSrL-YstSATx0OqeATHzUBttu5Qxz9tM",
@@ -30,19 +21,9 @@ function App() {
     const listArray = [];
     const [selectedListId, setSelectedListId] = useState(0)
 
-    function handleAddList(){
-        listArray.push(generateUniqueID())
-    }
-
-
     return (<div className={'App'}>
-
             <h1 aria-label={"Checklist App"}>Checklist App</h1>
-            {!selectedListId && <Lists db={db} onSelectListId={setSelectedListId}/>}
-            {selectedListId && <List db={db}/>}
-            <div className={'endButtons'}>
-                <button className={'largeButton'} onClick={handleAddList}>Add List</button>
-            </div>
+            {selectedListId ? <List db={db} onUnselectListId={setSelectedListId} selectedListId={selectedListId}/>: <Lists db={db} listArray = {listArray} onSelectListId={setSelectedListId} />}
         </div>
     );
 }

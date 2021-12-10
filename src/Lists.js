@@ -5,26 +5,31 @@ import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import {useCollection} from "react-firebase-hooks/firestore";
 
 function Lists(props) {
-    const [value,loading,error] = useCollection(props.db.collection("Lists"));
-    const listArray = [];
+    const query = props.db.collection("Lists");
+    const [value,loading,error] = useCollection(query);
 
     if (value) {
         for (let i=0; i<value.docs.length; i++) {
-            listArray[i] = value.docs[i].data();
+            props.listArray[i] = value.docs[i].data();
         }
     }
 
-    function addList(){
-        const id=generateUniqueID;
-        props.onSelectListId(id);
+    function handleAddList(){
+        const list = {id:generateUniqueID()};
+        query.doc(list.id).set(list);
+        props.listArray.push(list);
+        props.onSelectListId(list.id);
     }
 
     return (<div className={'Tasks'}>
-        <button onClick={e => addList}>Add List</button>
-        {/*loading, error cases*/}
-        {value.map(elem => <div>
-            <button> List {elem}</button>
+        {loading && <p>Page is loading</p>}
+        {error && <p>Error loading page</p>}
+        {props.listArray.map(elem => <div>
+            <button onClick={e => props.onSelectListId(elem.id)}> List {elem.id}</button>
         </div>)}
+        <div className={'endButtons'}>
+            <button className={'largeButton'} onClick={handleAddList}>Add List</button>
+        </div>
     </div>);
 }
 
