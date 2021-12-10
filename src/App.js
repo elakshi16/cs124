@@ -114,9 +114,6 @@ function SignedInApp(props) {
     const listArray = [];
     const [selectedListId, setSelectedListId] = useState(0)
 
-    function verifyEmail() {
-        auth.currentUser.sendEmailVerification();
-    }
 
     return (<div className={'App'}>
             <h1 aria-label={"Checklist App"}>Checklist App</h1>
