@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Task from "./Task";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 import {useCollection} from "react-firebase-hooks/firestore";
+import "./Lists.css";
 
 function Lists(props) {
     const query = props.db.collection("Lists");
@@ -27,11 +28,11 @@ function Lists(props) {
         }
     }
 
-    return (<div className={'Tasks'}>
+    return (<div className={'Tasks'} id={"Lists"}>
         {loading && <p>Page is loading</p>}
         {error && <p>Error loading page</p>}
         {props.listArray.map(elem => <div>
-            <button onClick={e => props.onSelectListId(elem.id)}> List {elem.id}</button>
+            <button id={"ListButton"} onClick={e => props.onSelectListId(elem.id)}> List {elem.id}</button>
         </div>)}
         <div className={'endButtons'}>
             <button className={'largeButton'} onClick={handleAddList}>Add List</button>
