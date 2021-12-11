@@ -35,10 +35,12 @@ The button on this page is not yet functional. For actual functionality, the use
 The user can then choose multiple ways to sign in or sign up. They can then press the Login with test user Email/PW and 
 get to the following screen.
 
-** Alternatively the user can press the login with Google which has full functionality, but the structure of the database 
+Alternatively the user can press the login with Google which has full functionality, but the structure of the database 
 makes all lists available to all users, effectively making this button the same as using the test user button.
 
 ![](Screenshots/lists.png)
+
+The 'Verify Email' button at the bottom of the image is not functional.
 
 -----
 Next, the user can select a list they would like to work on and then move on to the checklist part of the app as shown below.
@@ -52,32 +54,35 @@ This is the opening image of the checklist part of the app as previously describ
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
 
-![](Screenshots/openApp.png)
+![](Screenshots/opening.png)
+
+If the user would like to navigate to a different list they can press the 'Back to List Catalog' button, and it will take 
+them to the previous screen.
 
 -----
 
 Once a user inserts a task the app will look like the following.
 
-![](Screenshots/oneTask.png)
+![](Screenshots/oneTask2.png)
 
 ----
 
 The user can then set the priority for the task by clicking one of the three buttons on the task line.
 
-![](Screenshots/oneTask_priority.png)
+![](Screenshots/oneTask_priority2.png)
 
 ----
 
 The user then has the option to add more tasks or work with just the single task in the checklist. The following example 
 is what the app will look like if the user adds more tasks.
 
-![](Screenshots/moreTasks.png)
+![](Screenshots/moreTasks2.png)
 
 ----
 
 Once tasks are complete the user can click on the checkbox and mark a task as complete.
 
-![](Screenshots/someChecked.png)
+![](Screenshots/someChecked2.png)
 
 ----
 
@@ -85,7 +90,8 @@ At this point, if the user wants to make their checklist easier to read but don'
 just yet, they can hide complete tasks by clicking the corresponding button, and they will end up with a screen similar 
 to the one below.
 
-![](Screenshots/hideCompleted.png)
+![](Screenshots/hideCompleted2.png)
+
 
 ----
 
@@ -94,16 +100,17 @@ in the previous screenshot.
 
 If the user wishes to delete a specific task, they can simply press the delete button and the task will be deleted.
 
-![](Screenshots/deleteTask.png)
+![](Screenshots/deleteTask2.png)
+
 
 ----
 
 Lastly, if the user wishes to clear their tasks they can press the delete all button and return to back to the opening 
 view of the App.
+![](Screenshots/allChecked2.png)
 
-![](Screenshots/allChecked.png)
+![](Screenshots/opening.png)
 
-![](Screenshots/openApp.png)
 <br><br>
 
 Reflection
