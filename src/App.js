@@ -43,8 +43,8 @@ function App(props) {
         return <div>
             {user.displayName || user.email}
             <SignedInApp {...props} user={user}/>
-            <button type="button" onClick={() => auth.signOut()}>Logout</button>
-            {!user.emailVerified && <button type="button" onClick={verifyEmail}>Verify email</button>}
+            <button type="button" className={'largeButton'} onClick={() => auth.signOut()}>Logout</button>
+            {!user.emailVerified && <button type="button" className={'largeButton'} onClick={verifyEmail}>Verify email</button>}
         </div>
     } else {
         return <>
@@ -76,10 +76,10 @@ function SignIn() {
     }
     return <div>
         {error && <p>"Error logging in: " {error.message}</p>}
-        <button onClick={() =>
+        <button className={'largeButton'} onClick={() =>
             signInWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>Login with test user Email/PW
         </button>
-        <button onClick={() =>
+        <button className={'largeButton'} onClick={() =>
             auth.signInWithPopup(googleProvider)}>Login with Google
         </button>
     </div>
@@ -100,7 +100,7 @@ function SignUp() {
     }
     return <div>
         {error && <p>"Error signing up: " {error.message}</p>}
-        <button onClick={() =>
+        <button className={'largeButton'} onClick={() =>
             createUserWithEmailAndPassword(FAKE_EMAIL, FAKE_PASSWORD)}>
             Create test user
         </button>

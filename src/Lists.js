@@ -28,12 +28,14 @@ function Lists(props) {
         }
     }
 
-    return (<div className={'Tasks'} id={"Lists"}>
-        {loading && <p>Page is loading</p>}
-        {error && <p>Error loading page</p>}
-        {props.listArray.map(elem => <div>
-            <button id={"ListButton"} onClick={e => props.onSelectListId(elem.id)}> List {elem.id}</button>
-        </div>)}
+    return (<div className={'Tasks'}>
+        <div id={'Lists'}>
+            {loading && <p>Page is loading</p>}
+            {error && <p>Error loading page</p>}
+            {props.listArray.map(elem => <div>
+                <button id={"ListButton"} onClick={e => props.onSelectListId(elem.id)}> List {elem.id}</button>
+            </div>)}
+        </div>
         <div className={'endButtons'}>
             <button className={'largeButton'} onClick={handleAddList}>Add List</button>
         </div>

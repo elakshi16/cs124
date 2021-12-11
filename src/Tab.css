@@ -1,5 +1,8 @@
-.tab-list {  border-bottom: 1px solid #ccc;
+.tab-list {
+    border-bottom: 1px solid #cccccc;
     padding-left: 0;
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
 }
 
 .tab-list-item {

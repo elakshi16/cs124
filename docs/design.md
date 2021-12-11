@@ -1,15 +1,10 @@
 Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
-The major design decisions for this lab mostly involved aria-labels and how best to communicate our intent to users who 
-accessed our site via voiceOver. We had to make a decision as to how to label priority buttons so that they were read as 
-we intended (checkboxes instead of buttons), which involved ternary operators that toggled between true and false.
+We decided to prioritize functionality for this lab and so while we did try to maintain the major design elements 
+from our original list design, we did not fully change the design for all the components.
 
-Another major design decision was to flip the priority buttons to a vertical setup when the screen became narrower. This 
-allowed us to maximize space and allows the user to see all of their options at once on a mobile device. 
 
-We also placed a "dummy" Add List button outside of what is considered a list of tasks because the concept of adding a
-list should be separate from what happens within a single list.
 <br>
 <br>
 

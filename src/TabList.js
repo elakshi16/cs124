@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Tab from './Tab.js'
+import Tab from './Tab.js';
+import './Tablist.css';
 
 function TabList(props) {
     const [activeTab, setActiveTab] = useState(props.children[0].key);
