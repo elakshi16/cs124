@@ -2,15 +2,17 @@ Design Choices Discussion
 ------------------------------------------------------
 **Our Design Decisions** <br>
 We decided to prioritize functionality for this lab and so while we did try to maintain the major design elements 
-from our original list design, we did not fully change the design for all the components.
-
+from our original list design, we did not fully change the design for all the components. We chose to go with a more
+simplistic look to make the buttons and various screens easier to navigate.
 
 <br>
 <br>
 
 **Alternative Designs** <br>
-Alternative designs that were discussed included having a broken priority list. This did not end up working out, as it 
-was unclear to the user which buttons specified which priority.
+Alternative designs that were discussed included having a more consistent design across various pages, which would have 
+included a 'Lists' homepage that looked very similar to the actual checklist page (same types of elements inside and outside
+ the border) and a sign-in page that was more similar to our checklist page in terms of theme (color, similarly boxed elements,
+etc.)
 <br>
 <br>
 
@@ -19,11 +21,34 @@ We did not have any additional user testing for this lab.
 
 Final Design Images
 ------------------------------------------------------
+When the user opens the app they will see the sign-in page.
 
-**The only major design change from these design images is that the priority button moved to align right and there is an
-added Add List button at the bottom of the screen (centered, below Delete All button).
+![](Screenshots/signIN.png)
 
-This is the opening image of the app. The user can now proceed to insert a new task in the text box and press the '+'
+The user has the ability to tab between pages and they could press the 'Sign Up' tab and get to the following screen.
+
+![](Screenshots/signUP.png)
+
+The button on this page is not yet functional. For actual functionality, the user must go back to the 'Sign In' page.
+
+-----
+The user can then choose multiple ways to sign in or sign up. They can then press the Login with test user Email/PW and 
+get to the following screen.
+
+** Alternatively the user can press the login with Google which has full functionality, but the structure of the database 
+makes all lists available to all users, effectively making this button the same as using the test user button.
+
+![](Screenshots/lists.png)
+
+-----
+Next, the user can select a list they would like to work on and then move on to the checklist part of the app as shown below.
+
+Additionally, if at any point the user would like to log out they can press the logout button and return to the opening 
+page.
+
+-----
+
+This is the opening image of the checklist part of the app as previously described. The user can now proceed to insert a new task in the text box and press the '+'
 button to add the task to their checklist. The user may press any of the other buttons at this point if they so like, but
 they will not do anything.
 
@@ -84,15 +109,17 @@ view of the App.
 Reflection
 ------------------------------------------------------
 **Challenges**<br>
-We had several challenges during this lab. We ran into issues with resizing textboxes and grouping elements so that the 
-site would be able to correctly respond to dimension changes. 
-
-The challenge that we failed to overcome is in implementing Add List. The main issue was with managing the firestore database
-such that the top layer would be lists and each list would contain tasks. We struggled to implement the code to demonstrate
-the hierarchies we wanted. We were also unsure on how to manage state across components.
+Our main challenge was in getting the authentication rules to work. We were able to easily take in the Google Authentication 
+and apply it to our web app, but we had some difficulty getting the email and password login working because we had some 
+difficulty understanding how to work with text type input's values for the email and passwords in order to use 
+createUserWithEmailAndPassword and signInWithEmailAndPassword. Another challenge we had was in understanding how to use 
+the rules to get the sharing working. Ultimately, due to lack of time, we did not end up implementing either the signing 
+in with email and password or the list sharing.
 <br>
 <br>
 **What We Are Most Proud Of**<br>
-We are most proud of the fact that VoiceOver works well with the way we formatted our app. VoiceOver is able to use both 
-the original labels, and our supplemented labels to help the user have a good idea of what is going on through an audio 
-medium.
+One thing that we spent a lot of time working on was the implementation of adding multiple lists. We were not able to 
+finish implementing this for the last lab. We had considered skipping the implementation and focusing on authentication, 
+but after organizing our code a little bit, it was easier to understand how to implement the list of lists (as well as 
+how Firestore factors into everything). Overall, while we wish we could have implemented deleting lists and naming lists, 
+we are glad that we were able to implement this functionality.
