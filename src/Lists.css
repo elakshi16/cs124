@@ -1,0 +1,10 @@
+#ListButton {
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+    margin-bottom: 5px;
+}
+
+#Lists {
+    padding: 10px;
+    /*border: 5px solid blue;*/
+}
